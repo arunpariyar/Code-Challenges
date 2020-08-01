@@ -1,8 +1,8 @@
-(function(){
-    var random, userInput ;
 
-    
-    
+    var random, userInput, score ;
+
+    score = 0;
+
     function Question(question, answerOptions, answer){
         this.question = question;
         this.answerOptions = answerOptions;
@@ -43,8 +43,6 @@
     
     init();
     
-    // var gamePlaying = true;
-    
     function init(){
             r = randomNumber();
             askQuestion(r);
@@ -53,15 +51,16 @@
                 console.log("Game Over");
             }else{
                 inputNumber = Number(userInput);
-                result = questions[r].checkAnswer(userInput);
-                if (result === true){
+                result = questions[r].checkAnswer(inputNumber);
+                if (result){
                     console.log("Correct Answer");
+                    calScore(result);
                     init();
                 } else {
                     console.log("Incorrect Answer");
-                    init(); 
-                }   
-
+                    calScore(result);
+                    init();
+                }  
             }
     }
     
@@ -72,7 +71,16 @@
     function randomNumber(){
         return random =  Math.floor(Math.random() * questions.length);
     }
-})();
+
+    function calScore(x){
+        var print = "Your score is: ";
+            if(x){
+                return console.log(print + (score+=1));
+            }else{
+                return console.log(print + score);
+            }
+    }
+
 
  
 
