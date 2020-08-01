@@ -1,4 +1,4 @@
-
+(function(){
     var random, userInput, score ;
 
     score = 0;
@@ -80,6 +80,8 @@
                 return console.log(print + score);
             }
     }
+})();
+    
 
 
  
