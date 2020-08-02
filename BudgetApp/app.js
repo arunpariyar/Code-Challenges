@@ -2,7 +2,31 @@
 
 //UI MODULE
 var UIModule = (function(){
-   
+
+    // saving all the DOM we will need to use privately
+    var DOMstrings = {
+        inputType: '.add__type',
+        inputDescription:'.add__description',
+        inputValue: '.add__value',
+        inputButton: '.add__btn'
+    }
+
+    // Public Data
+    return {
+        //getting Inputs from the UI
+        getInputs: function(){
+            return {
+                type: document.querySelector(DOMstrings.inputType).value,
+                description: document.querySelector(DOMstrings.inputDescription).value,
+                value: document.querySelector(DOMstrings.inputValue).value
+            };
+        },
+        // allowing our DOMstring to be used by other modules
+        getDOMstrings: function(){
+            return DOMstrings;
+        }
+        
+    } 
 })();
 
 //DATA MODULE
@@ -13,12 +37,26 @@ var DataModule = (function(){
 //CONTROL MODULE
 var ControlModule = (function(uiMod, dataMod){
 
+    var DOM = UIModule.getDOMstrings();
+
     var addEntry = function(){
-        console.log('Event Acknowledged');
+        return console.log(UIModule.getInputs());
+
+        // 1. Get the input data
+
+        // 2. Add the new entry to our data structure
+
+        // 3. Add the new item to the UI
+
+        // 4. Calculate Budget
+
+        // 5. Update the UI
+
+        
     }
 
     //Add event listener when button is clicked
-    document.querySelector(".add__btn").addEventListener('click', addEntry);
+    document.querySelector(DOM.inputButton).addEventListener('click', addEntry);
 
     //Add event listener when enter is pressed
     document.addEventListener('keypress', function(event){
