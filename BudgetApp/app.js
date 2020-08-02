@@ -37,7 +37,21 @@ var DataModule = (function(){
 //CONTROL MODULE
 var ControlModule = (function(uiMod, dataMod){
 
-    var DOM = UIModule.getDOMstrings();
+    //Setting up our Event Listeners
+    var setupEventListeners = function(){
+        //accessing the DOMstrings from the UI module
+        var DOM = UIModule.getDOMstrings();
+
+        //Add event listener when button is clicked
+        document.querySelector(DOM.inputButton).addEventListener('click', addEntry);
+
+        //Add event listener when enter is pressed
+        document.addEventListener('keypress', function(event){
+            if (event.keyCode === 13 || event.which === 13){
+                addEntry();
+            }
+        });
+    }
 
     var addEntry = function(){
         return console.log(UIModule.getInputs());
@@ -51,18 +65,15 @@ var ControlModule = (function(uiMod, dataMod){
         // 4. Calculate Budget
 
         // 5. Update the UI
-
-        
     }
 
-    //Add event listener when button is clicked
-    document.querySelector(DOM.inputButton).addEventListener('click', addEntry);
-
-    //Add event listener when enter is pressed
-    document.addEventListener('keypress', function(event){
-        if (event.keyCode === 13 || event.which === 13){
-            addEntry();
+    return {
+        init: function(){
+            console.log("Application Started");
+            setupEventListeners();
         }
-    });
+    }
 
 })(UIModule, DataModule);
+
+ControlModule.init();
