@@ -32,6 +32,32 @@ var UIModule = (function(){
 //DATA MODULE
 var DataModule = (function(){
 
+    //Object contructor for expenses
+    var Expenses = function(id, description, value){
+        this.id = id,
+        this.description = description,
+        this.value = value
+    };
+
+    // Object contructor for all Income
+    var Expenses = function(id, description, value){
+        this.id = id,
+        this.description = description,
+        this.value = value
+    };
+
+    //  Data Structure for data
+    var data = { 
+        allTransactions: { 
+            expenses: [],
+            incomes: []
+        },
+        tally: {
+            expenses:0,
+            incomes:0,
+        }
+    };
+
 })();
 
 //CONTROL MODULE
