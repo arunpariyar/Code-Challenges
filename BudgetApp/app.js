@@ -20,7 +20,7 @@ var UIModule = (function(){
             return {
                 type: document.querySelector(DOMstrings.inputType).value, 
                 description: document.querySelector(DOMstrings.inputDescription).value,
-                value: document.querySelector(DOMstrings.inputValue).value
+                value: parseFloat(document.querySelector(DOMstrings.inputValue).value)
             };
         },
 
@@ -126,6 +126,13 @@ var DataModule = (function(){
 
 })();
 
+var UpdateTransaction = (function(){
+        // 4. Calculate Budget
+
+        // 5. Update the UI
+    
+})();
+
 //CONTROL MODULE
 var ControlModule = (function(uiMod, dataMod){
 
@@ -151,26 +158,25 @@ var ControlModule = (function(uiMod, dataMod){
         // 1. Get the input data
         input = UIModule.getInputs();
 
-        // 2. Add the new entry to our data structure
-        newEntry = DataModule.addEntry(input.type, input.description, input.value);
+        if(input.description !== "" && !isNaN(input.value) && input.value > 0 ) {
+            // 2. Add the new entry to our data structure
+            newEntry = DataModule.addEntry(input.type, input.description, input.value);
 
-        // 3. Add the new item to the UI
-        UIModule.displayEntry(newEntry, input.type);
+            // 3. Add the new item to the UI
+            UIModule.displayEntry(newEntry, input.type);
 
-        // 4. Clear the input areas 
-        UIModule.clearInputs();
+            // 4. Clear the input areas 
+            UIModule.clearInputs();
+        }
+    };
 
-        // 4. Calculate Budget
-
-        // 5. Update the UI
-    }
-
+    
     return {
         init: function(){
             console.log("Application Started");
             setupEventListeners();
         }
-    }
+    };
 
 })(UIModule, DataModule);
 
