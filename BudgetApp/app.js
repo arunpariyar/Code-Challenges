@@ -82,7 +82,7 @@ var DataModule = (function(){
         this.description = description,
         this.value = value
     };
-
+    
     //  Data Structure for data
     var data = { 
         allTransactions: { 
@@ -92,7 +92,19 @@ var DataModule = (function(){
         tally: {
             exp:0,
             inc:0,
-        }
+        },
+        budget: 0,
+        percentage: -1
+    };
+
+    // Function that can be used to total income or expense
+    var calcTally = function(type){
+        var sum = 0;
+         
+        data.allTransactions[type].forEach(function(cur){
+            sum += cur.value;
+        });
+        data.tally[type] = sum;
     };
 
     return{
@@ -119,18 +131,38 @@ var DataModule = (function(){
            //returning the new entry for use in other module.
            return newEntry; 
        },
+
+       calculateBuget:function(){
+
+            // calculate both income and expense
+            calcTally('inc');
+            calcTally('exp');
+           
+            //calulate the budget 
+            data.budget = data.tally.inc - data.tally.exp;
+
+            //calutate the percentage of expense
+            if(data.tally.inc > 0){
+                data.percentage = Math.round((data.tally.exp / data.tally.inc) * 100); 
+            } else {
+                data.percentage = -1;
+            }
+            
+            
+       },
+       getBudget:function(){
+           return {
+                budget: data.budget,
+                percentage: data.percentage,
+                incTotal:data.tally.inc,
+                expTotal:data.tally.exp
+           }
+       }, 
        testing: function(){
            console.log(data); 
        }
     };
 
-})();
-
-var UpdateTransaction = (function(){
-        // 4. Calculate Budget
-
-        // 5. Update the UI
-    
 })();
 
 //CONTROL MODULE
@@ -152,6 +184,17 @@ var ControlModule = (function(uiMod, dataMod){
         });
     }
 
+    var UpdateTransaction = function(){
+            //Calling the caluateBudget function from Data Module
+            DataModule.calculateBuget();
+    
+            //Get the budget.
+            var budget = DataModule.getBudget();
+    
+            console.log(budget);
+            // Update the UI
+    };
+
     var addEntry = function(){
         var input, newEntry;
 
@@ -167,7 +210,12 @@ var ControlModule = (function(uiMod, dataMod){
 
             // 4. Clear the input areas 
             UIModule.clearInputs();
-        }
+
+            //Updating Transactions
+            UpdateTransaction();
+        };
+
+        
     };
 
     
