@@ -16,7 +16,7 @@ var UIModule = (function(){
         //getting Inputs from the UI
         getInputs: function(){
             return {
-                type: document.querySelector(DOMstrings.inputType).value,
+                type: document.querySelector(DOMstrings.inputType).value, 
                 description: document.querySelector(DOMstrings.inputDescription).value,
                 value: document.querySelector(DOMstrings.inputValue).value
             };
@@ -33,14 +33,14 @@ var UIModule = (function(){
 var DataModule = (function(){
 
     //Object contructor for expenses
-    var Expenses = function(id, description, value){
+    var Expense = function(id, description, value){
         this.id = id,
         this.description = description,
         this.value = value
     };
 
     // Object contructor for all Income
-    var Expenses = function(id, description, value){
+    var Income = function(id, description, value){
         this.id = id,
         this.description = description,
         this.value = value
@@ -49,13 +49,42 @@ var DataModule = (function(){
     //  Data Structure for data
     var data = { 
         allTransactions: { 
-            expenses: [],
-            incomes: []
+            exp: [],
+            inc: []
         },
         tally: {
-            expenses:0,
-            incomes:0,
+            exp:0,
+            inc:0,
         }
+    };
+
+    return{
+       addEntry: function(type,des,val) {
+           var newEntry, ID;
+
+           //Creating a new ID using the ID number of the last item in the array.
+           if(data.allTransactions[type].length > 0){
+               ID = data.allTransactions[type][data.allTransactions[type].length - 1].id + 1 ;
+           } else {
+                ID = 0;
+           }
+
+           //Creating a new Entry based on the value ie. inc or exp.
+           if(type ==="exp"){
+                newEntry = new Expense(ID, des, val);
+           } else {
+                newEntry = new Income(ID, des, val);
+           }
+
+           //adding item to an our exp array.
+           data.allTransactions[type].push(newEntry);
+
+           //returning the new entry for use in other module.
+           return newEntry; 
+       },
+       testing: function(){
+           console.log(data); 
+       }
     };
 
 })();
@@ -80,11 +109,13 @@ var ControlModule = (function(uiMod, dataMod){
     }
 
     var addEntry = function(){
-        return console.log(UIModule.getInputs());
+        var input, newEntry;
 
         // 1. Get the input data
+        input = UIModule.getInputs();
 
         // 2. Add the new entry to our data structure
+        newEntry = DataModule.addEntry(input.type, input.description, input.value);
 
         // 3. Add the new item to the UI
 
