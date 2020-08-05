@@ -44,6 +44,20 @@ var UIModule = (function(){
 
         },
 
+        clearInputs: function(){
+            var inputs, inputArr;
+            //selected all the input fields with generates a node list.
+            inputs = document.querySelectorAll(DOMstrings.inputDescription + ' , ' + DOMstrings.inputValue);
+            
+            //Turn the nodelist into an array
+            inputArr = Array.prototype.slice.call(inputs);
+
+            inputArr.forEach(function(current, index, array){
+                current.value = "";
+            });
+
+            inputArr[0].focus();
+        },
         // allowing our DOMstring to be used by other modules
         getDOMstrings: function(){
             return DOMstrings;
@@ -142,6 +156,9 @@ var ControlModule = (function(uiMod, dataMod){
 
         // 3. Add the new item to the UI
         UIModule.displayEntry(newEntry, input.type);
+
+        // 4. Clear the input areas 
+        UIModule.clearInputs();
 
         // 4. Calculate Budget
 
