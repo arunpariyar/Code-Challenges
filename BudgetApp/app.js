@@ -10,7 +10,11 @@ var UIModule = (function(){
         inputValue: '.add__value',
         inputButton: '.add__btn',
         incomeContainer: '.income__list',
-        expensesContainer:'.expenses__list'
+        expensesContainer:'.expenses__list',
+        budgetLabel: '.budget__value',
+        incomeLabel:'.budget__income--value',
+        expenseLabel:'.budget__expenses--value',
+        expensePercentage: '.budget__expenses--percentage'
     }
 
     // Public Data
@@ -57,6 +61,18 @@ var UIModule = (function(){
             });
 
             inputArr[0].focus();
+        },
+        displayBudget: function(obj){
+
+            document.querySelector(DOMstrings.budgetLabel).textContent = obj.budget;
+            document.querySelector(DOMstrings.incomeLabel).textContent = obj.incTotal;
+            document.querySelector(DOMstrings.expenseLabel).textContent = obj.expTotal;
+
+            if(obj.percentage > 0 ){
+                document.querySelector(DOMstrings.expensePercentage).textContent = obj.percentage;
+            }else {
+                document.querySelector(DOMstrings.expensePercentage).textContent = "--";
+            }
         },
         // allowing our DOMstring to be used by other modules
         getDOMstrings: function(){
@@ -147,9 +163,8 @@ var DataModule = (function(){
             } else {
                 data.percentage = -1;
             }
-            
-            
        },
+       
        getBudget:function(){
            return {
                 budget: data.budget,
@@ -191,8 +206,8 @@ var ControlModule = (function(uiMod, dataMod){
             //Get the budget.
             var budget = DataModule.getBudget();
     
-            console.log(budget);
             // Update the UI
+            UIModule.displayBudget(budget);
     };
 
     var addEntry = function(){
@@ -214,14 +229,17 @@ var ControlModule = (function(uiMod, dataMod){
             //Updating Transactions
             UpdateTransaction();
         };
-
-        
     };
 
-    
     return {
         init: function(){
             console.log("Application Started");
+            UIModule.displayBudget({
+                budget: 0,
+                percentage: -1,
+                incTotal:0,
+                expTotal: 0
+           });
             setupEventListeners();
         }
     };
