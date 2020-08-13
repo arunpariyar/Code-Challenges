@@ -1,3 +1,5 @@
+//Strings in ES6 
+
 // template literals easily allows us to work with strings. 
 let vorname = "Arun";
 let nachname = "pariyar";
@@ -12,3 +14,7 @@ console.log('Ich heiße '+ vorname + ' '+ nachname +'.'+ ' '+ 'Ich bin '+ calcAg
 
 //ES6 using template literals. 
 console.log(`Ich heiße ${vorname} ${nachname}. Ich bin ${calcAge()} jahr alt.`);
+
+//new strings methods
+
+//.startsWith - returns boolen it strings starts with given letter
