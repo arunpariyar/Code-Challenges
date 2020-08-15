@@ -10,9 +10,9 @@ const superheroArray = Array.from(superheroesNodeList);
 superheroArray.forEach(cur => cur.style.color = 'green'); */
 
 
-// the FOR of loop that allows use continue and break
-const superheroesNodeList = document.querySelectorAll('.superhero');
-const superheroArray = Array.from(superheroesNodeList);
+// the FOR OF loop that allows use continue and break
+/* const superheroesNodeList = document.querySelectorAll('.superhero');
+const superheroArray = Array.from(superheroesNodeList); */
 
 /* //ES5 
 for(var i = 0; i < superheroArray.length; i++){
@@ -25,12 +25,19 @@ for(var i = 0; i < superheroArray.length; i++){
 
 //The problem above is that we have to make use of a lot of code to achieve the result the ES6 implementation is as follows
 
-for (const cur of superheroArray){ 
+/* for (const cur of superheroArray){ 
     if(cur.className.includes(' super')){
         continue;
     }
     cur.textContent += ' - Superman is the most powerful.';
 };
+*/
 
+//ES6 .find and .findIndex method. 
 
+const person = ["John","Jeff","Jimmy","Jade","Johny"];
 
+//note we must pass a call back function just like in map or forEach.
+console.log(person.findIndex(cur => cur === "Jade"));
+//this is the find.
+console.log(person.find(cur => cur === "Jade"));
