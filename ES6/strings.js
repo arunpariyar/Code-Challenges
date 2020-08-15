@@ -10,11 +10,19 @@ function calcAge(){
 }
 
 //ES5 
-console.log('Ich heiße '+ vorname + ' '+ nachname +'.'+ ' '+ 'Ich bin '+ calcAge()+' jahr alt.');
-
+/* console.log('Ich heiße '+ vorname + ' '+ nachname +'.'+ ' '+ 'Ich bin '+ calcAge()+' jahr alt.');
+ */
 //ES6 using template literals. 
-console.log(`Ich heiße ${vorname} ${nachname}. Ich bin ${calcAge()} jahr alt.`);
-
+/* console.log(`Ich heiße ${vorname} ${nachname}. Ich bin ${calcAge()} jahr alt.`);
+ */
 //new strings methods
 
 //.startsWith - returns boolen it strings starts with given letter
+
+let word = "sweet";
+
+//the tree statements below print true in the console.
+console.log(word.startsWith('s'));
+console.log(word.endsWith('t'));
+console.log(word.includes('e'));
+
