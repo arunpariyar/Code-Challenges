@@ -169,3 +169,141 @@ function xor(val1, val2){
     return true;
     }
  } */
+
+/* Exercise
+Write a function isEven that checks if a passed number is even. If the given number is even, true should be returned, otherwise false.
+
+Example: isEven(2) should return true and isEven(3) should return false.
+
+Solution
+function isEven(v){
+    let reminder = v%2;
+    if(reminder === 0){
+    return true;
+    }
+    else{
+    return false;
+    }
+}
+ */
+
+/* Exercise
+Write a function unequal that checks 3 values for strict inequality. The function should return true if all three parameters are strict unequal. Otherwise false.
+
+Example: unequal(1, 2, 3) should return true and unequal(1, 1, 2) should return false.
+
+Solution
+function unequal(a,b,c)
+{
+if(a!==b && b!==c && a!==c){
+return true;
+}else{
+return false;
+}
+} */
+
+
+/* Exercise
+Write a function repdigit that determines whether a two-digit decimal is a repdigit or not. If the decimal is a repdigit, 'Repdigit!' should be returned, otherwise 'No repdigit!'.
+
+Example: repdigit(22) shouöd return 'Repdigit!' and repdigit(23) should return 'No repdigit!'.
+
+HINT
+function repdigit(n) {
+    // Calculate the ones digit
+    // of n with modulo 10.
+    // Calculate the tens digit
+    // of n by dividing by 10
+    // and rounding down.
+    // Compare ones and tens digits.
+    }
+
+    Solution
+function repdigit(num){
+    let fD = num%10;
+    let sD = num/10;
+    sD = Math.floor(sD);
+    if(fD === sD){
+    return "Repdigit!"}
+    return "No Repdigit!"
+} */
+/* 
+Exercise
+Write a function addWithSurcharge that adds two amounts with surcharge. For each amount less than or equal to 10, the surcharge is 1. For each amount greater than 10 and less than or equal to 20, the surcharge is 2. For each amount greater than 20, the surcharge is 3.
+
+My Solution
+function addWithSurcharge(a,b){
+    let surCharge = 0;
+    
+    let result = a + b;
+    if(a <=10){
+    surCharge = 1;
+    }else if(a >10 && a<=20){
+    surCharge = 2;
+    } else {
+    surCharge = 3;
+    }
+    
+    result += surCharge;
+    
+    if(b <=10 ){
+    surCharge = 1;
+    }else if(b > 10 && b<=20){
+    surCharge = 2;
+    }else{
+    surCharge = 3;
+    }
+    
+    result += surCharge;
+    
+    return result
+} */
+    
+
+/* Exercise
+Write a function toArray that takes 2 values and returns these values in an array.
+
+My Solution
+function toArray(a,b){
+    let arr = [];
+    arr[0] = a;
+    arr[1] = b;
+    
+    return arr;
+} */
+
+/* Exercise
+Write a function sort that takes an array filled with 3 numbers and returns these 3 numbers sorted in ascending order as an array.
+
+Example: sort([2, 3, 1]) should return [1, 2, 3].
+
+Solution
+function sort(arr){
+    let newArray =[];
+    let len = arr.length;
+    let st = arr[0];
+    let nd = arr[1];
+    let rd = arr[2];
+    
+    let min = Math.min(st,nd,rd);
+    let max = Math.max(st,nd,rd);
+
+    newArray.push(min);
+    
+    if(st !== min && st !== max)
+    {
+    newArray.push(st);
+    } 
+    else if(nd !== min && nd !== max)
+    {
+    newArray.push(nd);
+    } 
+    else if(rd !== min && rd !== max)
+    {
+    newArray.push(rd);
+    }
+    
+    newArray.push(max);
+    
+    return newArray;
+}  */
