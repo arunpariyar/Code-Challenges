@@ -307,3 +307,32 @@ function sort(arr){
     
     return newArray;
 }  */
+
+
+/* Exercise
+Write a function rotate that rotates the elements of an array. All elements should be moved one position to the left. The 0th element should be placed at the end of the array. The rotated array should be returned.
+
+Example: rotate(['a', 'b', 'c']) should return ['b', 'c', 'a'].
+
+My Solution
+function rotate(arr){
+    let a1 = arr[0];
+    arr.shift();
+    arr.push(a1);
+    return arr;
+} */
+
+/* Exercise
+Write a function add that adds an element to the end of an array. However, the element should only be added if it is not already in the array.
+
+Example: add([1, 2], 3) should return [1, 2, 3] and add([1, 2], 2) should return [1, 2].
+
+My Solution
+function add(arr,el){
+    let index = arr.indexOf(el);
+    if(index !== -1){
+    return arr;
+    }
+    arr.push(el);
+    return arr;
+} */
