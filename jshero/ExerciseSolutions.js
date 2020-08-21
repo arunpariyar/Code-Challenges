@@ -336,3 +336,45 @@ function add(arr,el){
     arr.push(el);
     return arr;
 } */
+
+/* Exercise
+Write a function flat that flattens a two-dimensional array with 3 entries.
+
+Example: flat(loshu) should return [4, 9, 2, 3, 5, 7, 8, 1, 6]. Thereby loshu is the magic square from the example above.
+
+My Solution
+function flat(loshu){
+    let row1 = loshu[0];
+    let row2 = loshu[1];
+    let row3 = loshu[2];
+    
+    let result =row1.concat(row2)
+    result = result.concat(row3);
+    
+    return result;
+} */
+/* 
+Exercise : This one took me quite a while
+Write a function median that takes an array of ascending numbers and returns the median of that numbers.
+
+Example: median([1, 2, 10]) should return 2 and median([1, 2, 10, 100]) should return 6.
+
+My Solution:
+function median(array){
+    let length = array.length;
+    let index = Math.floor(length/2);
+    if(length > 1){
+        if(length % 2 === 1){
+            return array[index];
+        }else{ 
+            let result = array[index] + array[index - 1];
+            result = result/2;
+            return result;
+        }
+       
+    }else{
+    return array[0];
+    }
+}
+ */
+
