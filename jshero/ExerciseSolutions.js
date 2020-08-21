@@ -378,3 +378,50 @@ function median(array){
 }
  */
 
+/* Exercise
+Write a function hello having one parameter and returning 'Hello <parameter>!'. If hello is called without an argument, 'Hello world!' should be returned.
+
+My Solution
+function hello(parameter){
+    if(parameter === undefined){
+    return "Hello world!";
+    }else{
+    return `Hello ${parameter}!`;
+    }
+}
+ */
+/* 
+Write a function cutComment that takes one line of JavaScript and returns a possible line comment trimmed. If the line contains no line comment, null should be returned. For simplicity, we assume that the code does not contain the comment characters within a string.
+
+Example: cutCommt('let foo; // bar') should return 'bar'.
+
+My Solution
+function cutComment(line){
+    let index = line.indexOf('/');
+    
+    if(index === -1){
+    return null;
+    }else{
+    let comment = line.substr(index+2);
+    comment = comment.trim();
+    return comment;
+    }
+} */
+
+
+/* Exercise
+Write a function spaces that takes a natural number n and returns a string of n spaces.
+
+Example: spaces(1) should return ' '.
+
+My solution
+
+function spaces(n){
+    let space = "";
+    while(space.length < n){
+    space = space + " ";
+    }
+    
+    return space;
+} */
+
