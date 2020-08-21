@@ -425,3 +425,36 @@ function spaces(n){
     return space;
 } */
 
+Exercise
+Write a function lcm that takes two natural numbers and calculates their least common multiple (lcm). The lcm of two natural numbers a und b is the smallest natural number that is divisible by a and b.
+
+Example: lcm(4, 6) should return 12.
+
+My Solution
+function lcm(a,b){
+    let limit = a*b;
+    let min = Math.min(a,b)
+    for(var i=min ; i <=limit;i++){
+    if(i%a === 0 && i%b === 0) return i;
+    }
+}
+
+Alternative
+function lcm(a, b) {
+
+    let theLCM = 0;
+    let remainderA;
+    let remainderB;
+  
+    do {
+  
+      theLCM++;
+      remainderA = theLCM % a;
+      remainderB = theLCM % b;
+  
+    } while (remainderA !== 0 || remainderB !== 0)
+  
+    return theLCM;
+  }
+
+
