@@ -425,7 +425,7 @@ function spaces(n){
     return space;
 } */
 
-Exercise
+/* Exercise
 Write a function lcm that takes two natural numbers and calculates their least common multiple (lcm). The lcm of two natural numbers a und b is the smallest natural number that is divisible by a and b.
 
 Example: lcm(4, 6) should return 12.
@@ -455,6 +455,55 @@ function lcm(a, b) {
     } while (remainderA !== 0 || remainderB !== 0)
   
     return theLCM;
-  }
+  } */
+/* 
+Exercise
+Write a function gcd that takes two natural numbers and calculates their gcd.
 
+Example: gcd(6, 15) should return 3.
 
+function gcd(a,b){
+    let max = Math.max(a,b);
+    for(var i = max ; i >=0;i--){
+    if(a%i === 0 && b%i === 0) return i;
+    }
+} */
+
+/* Exercise
+Write a function isPrime that checks whether a passed number is prime. In case of a prime number it should return true, otherwise false.
+
+Example: isPrime(7) should return true and isPrime(8) should return false.
+
+My Solution
+
+function isPrime(n){
+    let finalSum = 1+n;
+    let sum = 0;
+    for(let i = 1; i <= n;i++){
+    if( n%i === 0){
+    sum += i;
+    }
+    }
+    if(sum === finalSum){
+    return true;
+    }else{
+    return false;
+    }
+} */
+
+/* Exercise
+Write a function sum that calculates the sum of all elements of a two-dimensional array.
+
+Example: sum([[1, 2], [3]]) should return 6.
+
+My Solution
+
+function sum(array){
+    let sum = 0;
+    for(let i = 0; i < array.length; i++){
+    for(let j = 0; j < array[i].length; j++){
+    sum = sum + array[i][j];
+    }
+    }
+    return sum;
+} */
