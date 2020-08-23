@@ -507,3 +507,52 @@ function sum(array){
     }
     return sum;
 } */
+/* 
+Exercise
+Write a function max that calculates the maximum of an arbitrary number of numbers.
+
+Example: max(1, 2) should return 2 and max(2, 3, 1) should return 3.
+
+My Solution
+
+function max(){
+    let max = 0
+    for(let i = 0; i<=arguments.length; i++){
+    if(max < arguments[i]) max = arguments[i];
+    }
+    return max;
+} */
+
+
+THE MOST ANNOYING CHALLANGE - most refactor 
+
+/* Exercise
+Write a function parseFirstInt that takes a string and returns the first integer present in the string. If the string does not contain an integer, you should get NaN.
+
+Example: parseFirstInt('No. 10') should return 10 and parseFirstInt('Babylon') should return NaN.
+
+My Solution
+
+function parseFirstInt(string){
+    let index;
+        let numString;
+    if(Number.isNaN(string)){
+        return NaN;
+    }
+    let length = string.length;
+    for(let i=0; i< length; i++){
+        let char = string.charAt(i);
+        if(isNaN(char) === false && char !== " "|| char === "-"){
+            index = i;
+            break;
+        }
+    }
+    numString = parseInt((string.substr(index)).trim());
+    
+    if(isNaN(numString)){
+        return NaN;
+    }else{
+        
+return numString;
+    }  
+} */
