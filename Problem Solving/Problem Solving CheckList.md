@@ -7,7 +7,7 @@
 5. Look back and Refactor
 
 ## Detailed Steps
-### 1. Understand The Problem
+### Understand The Problem
 1. Explain the problems in your own words
 2. Understand the input 
 3. Understand the output
@@ -16,3 +16,10 @@
 
 
 ### Explore Concerete Examples
+1. Explore simple examples
+2. Progress to complex examples
+3. Explore with empty inputs
+4. Explore with invalid inputs
+
+### Break It Down
+
