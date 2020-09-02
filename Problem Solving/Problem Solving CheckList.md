@@ -23,3 +23,16 @@
 
 ### Break It Down
 
+1. Write the broad pseudocode to solve problems
+2. Make the pseudocode more explicit
+
+### Solve or Simplify 
+1. If you can solve it do that else
+2. find your core difficulties
+3. Temporarily ignore the difficulty
+4. write a simplified solution
+5. incorporate the difficulty back in
+
+### Look Back & Refactor
+
+
