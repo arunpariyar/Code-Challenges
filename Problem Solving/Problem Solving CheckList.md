@@ -35,4 +35,13 @@
 
 ### Look Back & Refactor
 
+1. Can you check the result ? 
+2. Can you derive the result differently ? 
+3. Can you understand it at a glance ? 
+4. Can you use the result or method to solve other problem ? 
+5. Can you improve the performance of your solution ?
+6. Can you think of other ways to refactor ? 
+7. How have other people solved this problem ? 
+ 
+
 
