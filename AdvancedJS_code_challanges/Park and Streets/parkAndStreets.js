@@ -41,8 +41,8 @@ class Street extends Entity{
     }
 }
 
-// we will create 3 parks - Green Park Red Park Blue Park
-// name,buildYear,noOfTrees,area,age
+// we will create 3 parks - Green Park, Red Park, Blue Park
+
 let allParks = [ 
     new Park("Green Park",1980,500,10),
     new Park("Basundara Park",1950,900,15),
