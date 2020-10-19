@@ -13,12 +13,16 @@ const first = () => {
 
 first(); */
 
-function getStudents(){
-    setTimeout(()=>{
+// **********Traditional JavaScript CallBack********
+
+//The triangular patten that comes about from making use of several callbacks is called the Call Back Hell
+
+/* const getStudents = () => {
+    setTimeout(() => {
         const studentId = [112, 115, 118];
         console.log(studentId);
             
-            setTimeout(id =>{
+            setTimeout(id => {
                 const student1 = {
                     name:'John Smith',
                     school:'School Of Life'
@@ -38,3 +42,56 @@ function getStudents(){
 }
 
 getStudents();
+ */
+
+// ********** JAVASCRIPT PROMISE ********
+
+const getStudents = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(['James', 'Harry', 'Sally', 'Rita']);
+    }, 2000)
+});
+
+const getStudent = studentID => {
+    return new Promise((resolve, reject) => {
+        setTimeout(id => {
+            const student1 = {
+                no: '1',
+                name: 'Harry Smith',
+                school: 'School Of Life'
+            };
+            resolve(`${student1.no}: ${student1.name}`);
+        }, 1500, studentID)
+    });
+};
+
+const getSchool = school => {
+    return new Promise((resolve, reject)=>{
+        setTimeout(id =>{
+            const student1 = {
+                no: '1',
+                name: 'Harry Smith',
+                school: 'School Of Life'
+            };
+            resolve(`${student1.no}: ${student1.school}`);
+        },1500,school)
+    })
+
+}
+
+getStudents
+    .then(names => {
+        console.log(names);
+        return getStudent(names[2]);
+        
+    })
+    .then(student => {
+        console.log(student)
+        return getSchool(student);
+    })
+    .then(school => {
+        console.log(school)
+    })
+    .catch(error => {
+        console.log('There was an Error!!');
+    })
