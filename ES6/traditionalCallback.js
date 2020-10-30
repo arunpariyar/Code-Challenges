@@ -90,7 +90,7 @@ getStudents
         return getSchool(student);
     })
     .then(school => {
-        console.log(school)
+        console.log(school);
     })
     .catch(error => {
         console.log('There was an Error!!');
