@@ -1,0 +1,12 @@
+//Master_Grid_Layout
+
+.container {
+    display: grid;          
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content) ; // 80vh min-content
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end fullbleed-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [fullbleed-end];
+
+    & > *{
+        padding:2rem;
+        font-size: 2rem;
+    }
+}

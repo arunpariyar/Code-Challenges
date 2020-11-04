@@ -1,0 +1,6 @@
+
+.sidebar {
+    background-color: yellowgreen;
+    grid-column: sidebar-start / sidebar-end;
+    grid-row: 1 / -1; //from the beginning to the end
+}

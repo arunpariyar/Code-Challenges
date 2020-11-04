@@ -1,98 +1,16 @@
-$color-primary: #c69963;
-$color-primary-dark: #B28451;
-
-$color-secondary: #101d2c;
-
-$color-grey-light-1: #f9f7f6;
-$color-grey-light-2: #aaa;
-
-$color-grey-dark-1: #54483A;
-$color-grey-dark-2: #6D5D4B;
-
-// FONT VARIABLES
-$font-primary: 'Nunito', sans-serif;
-$font-display: 'Josefin Sans', sans-serif;
+@import "base/_variables";
+@import "base/_typography";
+@import "base/_animation";
+@import "base/_base";
+@import "base/_reset";
 
 
-//CSS Reset
-*,
-*::before,
-*::after {
-    margin:0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
-html {
-    box-sizing: border-box;
-    font-size: 62.5%; //    10px/16px = 62.5% -> 1rem = 10px
-}
-
-body {
-    font-family: $font-primary;
-    color: $color-grey-dark-2;
-    font-weight: 300;
-    line-height: 1.6;
-}
-
-//Master_Grid_Layout
-.container {
-    display: grid;          
-    grid-template-rows: 80vh min-content 40vw repeat(3, min-content) ; // 80vh min-content
-    grid-template-columns: [sidebar-start] 8rem [sidebar-end fullbleed-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [fullbleed-end];
-
-    & > *{
-        padding:2rem;
-        font-size: 2rem;
-    }
-}
- 
-.sidebar {
-    background-color: yellowgreen;
-    grid-column: sidebar-start / sidebar-end;
-    grid-row: 1 / -1; //from the beginning to the end
-}
-.header {
-    background-color: orangered;
-    grid-row: 1 / 2;
-    grid-column: fullbleed-start / col-end 6;
-}
-.realtors {
-    background-color: palegreen;
-    grid-row: 1  /2;
-    grid-column: col-start 7 / fullbleed-end;
-}
-.features{
-    background-color: palevioletred;
-    grid-row: 2 / 3;
-    grid-column: center-start / center-end;
-}
-.story{
-    
-    &__pictures{
-        grid-row: 3 / 4;
-        grid-column: fullbleed-start / col-end 4;
-        background-color: peachpuff;
-    }
-    &__content{
-        grid-row: 3 / 4;
-        grid-column: col-start 5 / fullbleed-end;
-        background-color: peru;
-    }
-}
-.homes {
-
-    grid-row: 4 / 5;
-    grid-column: center-start / center-end;
-    background-color: rebeccapurple;
-}
-.gallery{
-    grid-row: 5 / 6;
-    grid-column: fullbleed-start / fullbleed-end;
-    background-color: rosybrown;
-}
-.footer{
-    grid-row: 6 / -1;
-    grid-column: fullbleed-start / fullbleed-end;
-    background-color: saddlebrown;
-}
+@import "layout/layout";
+@import "layout/sidebar";
+@import "layout/header";
+@import "layout/realtors";
+@import "layout/features";
+@import "layout/story";
+@import "layout/homes";
+@import "layout/gallery";
+@import "layout/footer"
