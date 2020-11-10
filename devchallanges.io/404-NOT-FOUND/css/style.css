@@ -1,0 +1,77 @@
+/* CSS RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  width: 90%;
+  margin: 0 auto;
+  background: #FFFFFF;
+}
+
+.nav {
+  font-family: "Inconsolata", monospace;
+  margin-top: 2.5rem;
+  text-transform: uppercase;
+}
+
+.display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  margin: 10rem 2rem;
+}
+.display__img > img {
+  width: 100%;
+  margin-bottom: 10rem;
+}
+.display__content {
+  margin-left: 2rem;
+}
+.display__content--info {
+  font-size: 6rem;
+  line-height: 1.2;
+}
+.display__content--text {
+  margin-top: 1.5rem;
+  font-family: "Space Mono", monospace;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.7;
+  width: 30rem;
+}
+
+.btn,
+.btn:active,
+.btn:hover,
+.btn:focus {
+  margin-top: 5rem;
+  font-family: "Space Mono", monospace;
+  color: #fff;
+  background-color: #333333;
+  border: none;
+  outline: none;
+  padding: 2rem 4rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+footer {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin: 2.5rem;
+  font-size: 1.4rem;
+}
+
+/*# sourceMappingURL=style.css.map */

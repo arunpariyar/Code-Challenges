@@ -1,0 +1,14 @@
+{
+  "name": "404-not-found",
+  "version": "1.0.0",
+  "description": "404 not found challange from devchallenges.io",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass sass/main.scss css/style.css --watch"
+  },
+  "author": "Arun Pariyar",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.29.0"
+  }
+}
