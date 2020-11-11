@@ -1,4 +1,4 @@
-/* CSS RESET */
+/* Master CSS Reset */
 *,
 *::before,
 *::after {
@@ -16,31 +16,41 @@ body {
   font-family: "Space Mono", monospace;
   font-weight: 400;
   width: 90%;
-  margin: 0 auto;
   background: #FFFFFF;
 }
 
 .nav {
   font-family: "Inconsolata", monospace;
-  margin-top: 2.5rem;
+  margin-top: 4rem;
+  margin-left: 7.7rem;
   text-transform: uppercase;
 }
 
 .display {
+  margin: 10rem 5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
-  margin: 10rem 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(32.5rem, 1fr));
 }
 .display__img > img {
   width: 100%;
   margin-bottom: 10rem;
 }
 .display__content {
-  margin-left: 2rem;
+  margin-left: 5rem;
+}
+@media (max-width: 37.5em) {
+  .display__content {
+    margin-left: 0;
+  }
 }
 .display__content--info {
   font-size: 6rem;
   line-height: 1.2;
+}
+@media (max-width: 37.5em) {
+  .display__content--info {
+    font-size: 4.8rem;
+  }
 }
 .display__content--text {
   margin-top: 1.5rem;
@@ -48,7 +58,20 @@ body {
   font-size: 2rem;
   font-weight: 400;
   line-height: 1.7;
-  width: 30rem;
+  width: 40rem;
+}
+@media (max-width: 37.5em) {
+  .display__content--text {
+    font-size: 1.5rem;
+  }
+}
+
+footer > p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 1.5rem;
 }
 
 .btn,
@@ -64,14 +87,6 @@ body {
   padding: 2rem 4rem;
   font-size: 1.4rem;
   text-transform: uppercase;
-}
-
-footer {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  text-align: center;
-  margin: 2.5rem;
-  font-size: 1.4rem;
 }
 
 /*# sourceMappingURL=style.css.map */

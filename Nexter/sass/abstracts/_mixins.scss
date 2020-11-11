@@ -1,0 +1,66 @@
+//Media Query Manager
+
+/* 
+0 - 600px : small devices
+600 - 900px: Tablet Portrait
+900px - 1200px: tablet landscape
+[1200px - 1800px] the normal desktop screen size
+1800px + : Big Desktop 
+ */
+
+
+//  Approach 1 where we write the style in the css and then call it directly in the mixin using @content
+/* 
+@include respond-phone {
+    font-size: 50%;
+} 
+
+@mixin respond-phone {
+     @media (max-width:600px) { @content};
+ } 
+ */
+
+//  Approach 2 
+/* 
+$breakpoint argument choices
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+
+@include respone(phone){
+    font-size:50%;
+}
+@include respone(tab-port){
+    font-size:50%;
+}
+@include respone(tab-land){
+    font-size:50%;
+}
+@include respone(big-desktop){
+    font-size:50%;
+}
+
+@mixin respond($breakpoint) { 
+    @if $breakpoint == phone { 
+        @media (max-width: 37.5em) { @content }; //600px
+    }
+    @if $brekpoint == tab-port { 
+        @media (max-width: 52.25em) { @content }; //900px
+    }
+    @if $brekpoint == tab-land { 
+        @media (max-width: 75em) { @content }; //1200px
+    }
+    @if $brekpoint == big-desktop { 
+        @media (min-width: 112.5em) { @content }; //1800px
+    }
+}
+
+NOTE with Media queries we must make use of em rather than rem as they are not affected by root font size
+
+*/
+
+
+
