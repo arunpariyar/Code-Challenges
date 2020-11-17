@@ -1,0 +1,14 @@
+{
+  "name": "my-team-page-master",
+  "version": "1.0.0",
+  "description": "my team page | devchallanges.io",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass sass/main.scss css/style.css --watch"
+  },
+  "author": "Arun Pariyar",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.29.0"
+  }
+}

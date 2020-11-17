@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.team {
+  margin: 5rem 15rem;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  align-items: start;
+}
+.intro__title {
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-size: 3.6rem;
+}
+.intro__details {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+}
+.intro__details--title {
+  font-weight: 600;
+}
+.intro__details--content {
+  font-weight: 400;
+  width: 70%;
+}
+
+.photos {
+  margin: 8rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 10rem;
+}
+.photos .photo__card {
+  display: grid;
+  grid-template-columns: max-content min-content;
+  grid-gap: 1rem;
+}
+.photos .photo__card > img {
+  width: 25rem;
+}
+.photos .photo__card--title {
+  writing-mode: vertical-rl;
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+/*# sourceMappingURL=style.css.map */
