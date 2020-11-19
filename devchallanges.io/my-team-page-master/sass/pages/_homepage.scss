@@ -1,18 +1,16 @@
 .team { 
-    margin: 5rem 15rem;
+    margin: 10vw 10vw;
 }
 
 .intro {
-    // background-color: red;
-    
     display: grid;
-    grid-template-columns: repeat(2, minmax(min-content, 1fr));
-    align-items: start;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
 
     &__title {
         font-family: 'PT Serif', serif;
         font-weight: 700;
         font-size: 3.6rem;
+        margin-bottom: 2.5rem;
     }
 
     &__details { 
@@ -21,31 +19,31 @@
 
         &--title {
             font-weight: 600;
+            
         }
 
         &--content {
             font-weight: 400;
-            width: 70%;
+            margin-top: 1rem;
+            line-height: 1.5;
         }
     }
-
 }
 
 .photos {
-    margin: 8rem 0;
+    margin: 5rem 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    grid-gap: 10rem;
-
-    
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    grid-gap: 5rem;
 
     .photo__card { 
         display: grid;
-        grid-template-columns: max-content min-content;
+        grid-template-columns: min-content min-content;
         grid-gap: 1rem;
+        
 
         > img {
-            width: 25rem;
+            width: 20rem;
         }
 
         &--title{
@@ -57,5 +55,12 @@
         }
 
     }
+}
 
+footer{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #A9A9A9;
 }
