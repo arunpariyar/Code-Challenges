@@ -1,3 +1,10 @@
+//Responsive Breakpoints
+$bp-largest: 75em; //1200px
+$bp-large:62.5em; //1000px
+$bp-medium: 50em; //800px
+$bp-small:37.5em;
+
+
 //CSS Reset
 *,
 *::before,
@@ -10,6 +17,9 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%; //    10px/16px = 62.5% -> 1rem = 10px
+    @media only screen and (max-width: $bp-largest){
+        font-size: 50%;
+    }
 }
 
 body {

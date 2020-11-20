@@ -7,9 +7,19 @@
     padding: 8rem;
     padding-top: 4rem;
 
+    @media only screen and (max-width: $bp-medium){
+        // grid-column: fullbleed-start / fullbleed-end;
+        grid-column: 1 / -1;
+    }
+
+    @media only screen and (max-width: $bp-small){
+        padding: 5rem;
+    }
+
+
     display: grid;
-    grid-template-rows: 1fr min-content 6rem 1fr;
-    grid-template-columns: max-content;
+    grid-template-rows: 1fr min-content minmax(min-content,6rem) 1fr;
+    grid-template-columns: minmax(min-content,max-content);
     grid-row-gap: 1.5rem;
     justify-content: center;
 
@@ -30,6 +40,7 @@
         font-size: 1.6rem;
         color: $color-grey-light-2;
         align-items: center;
+        
 
         
         &::before,
@@ -47,10 +58,14 @@
         grid-template-columns: repeat(4, 1fr);
         grid-column-gap: 3rem;
         justify-items: center;
+        align-items: center;
         img {
-            height: 2.5rem;
+            max-height: 2.5rem;
+            max-width: 100%;
             filter: brightness(70%);
 
         } 
     }
+
+    
 }

@@ -16,6 +16,15 @@
         grid-column-gap: 2rem ;
         grid-row-gap: 5vh;
         align-items: center  ;
+        
+        @media only screen and (max-width: $bp-medium){
+            grid-template-columns: repeat(3, min-content max-content);
+        }
+
+        @media only screen and (max-width: $bp-small){
+            grid-template-columns: min-content max-content;
+        }
+
     }
 
     &__img {
@@ -28,5 +37,10 @@
         text-transform: uppercase;
         color: $color-grey-light-2;
         margin-top: -3px;
+    }
+    
+    @media only screen and (max-width: $bp-medium){
+        grid-row: 3/4;
+        grid-column: fullbleed-start / fullbleed-end;
     }
 }
