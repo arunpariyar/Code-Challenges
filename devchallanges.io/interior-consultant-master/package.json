@@ -1,0 +1,14 @@
+{
+  "name": "interior-consultant-master",
+  "version": "1.0.0",
+  "description": "Devchallanges | interior consultant challange",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass sass/main.scss css/style.css --watch"
+  },
+  "author": "Arun Pariyar",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.29.0"
+  }
+}

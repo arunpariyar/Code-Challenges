@@ -1,0 +1,314 @@
+/* 
+font-family: 'Crimson Pro', serif;
+font-family: 'Lora', serif;
+font-family: 'Montserrat', sans-serif;
+ */
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+/* 
+apply following
+
+@include respond(tab-port) {
+    padding: 10rem 0;
+} 
+*/
+/* 
+font-family: 'Crimson Pro', serif;
+font-family: 'Lora', serif;
+font-family: 'Montserrat', sans-serif;
+ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #181719;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 1.8rem;
+  margin: 5rem;
+}
+@media only screen and (max-width: 37.5em) {
+  body {
+    margin: 2rem;
+  }
+}
+
+.navigation__checkbox {
+  display: none;
+}
+.navigation__button {
+  background-color: #fff;
+  width: 7rem;
+  height: 7rem;
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  border-radius: 50%;
+  z-index: 2000;
+  text-align: center;
+  cursor: pointer;
+}
+.navigation__background {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  background-image: radial-gradient(#181719, #181719);
+  z-index: 1000;
+  transition: transform 0.8s;
+}
+.navigation__nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100rem;
+  z-index: 1500;
+  opacity: 0;
+  width: 0;
+  transition: all 0.8s;
+}
+.navigation__list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style-type: none;
+  text-align: center;
+  width: 100%;
+}
+.navigation__item {
+  margin: 1rem;
+}
+.navigation__link {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 3rem;
+  font-weight: 300;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(80);
+}
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  width: 100%;
+  left: 0;
+}
+.navigation__icon {
+  position: relative;
+  margin-top: 3.5rem;
+}
+.navigation__icon, .navigation__icon::before, .navigation__icon::after {
+  width: 3rem;
+  height: 2px;
+  background-color: #181719;
+  display: inline-block;
+}
+.navigation__icon::before, .navigation__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+.navigation__icon::before {
+  top: -0.8rem;
+}
+.navigation__icon::after {
+  top: 0.8rem;
+}
+.navigation__button:hover .navigation__icon::before {
+  top: -1rem;
+}
+.navigation__button:hover .navigation__icon::after {
+  top: 1rem;
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent;
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.nav__logo {
+  display: inline-block;
+  white-space: nowrap;
+  font-family: "Crimson Pro", serif;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  border: 1px solid #fff;
+  padding: 0.8rem;
+}
+.nav__links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(12rem, max-content));
+  justify-items: center;
+}
+.nav__links--link {
+  display: inline-block;
+}
+.nav__links--selected {
+  font-weight: bold;
+}
+
+.intro {
+  margin: 10rem 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(8, [col-start] 1fr [col-end]);
+}
+@media only screen and (max-width: 37.5em) {
+  .intro {
+    margin: 3rem 0 0 0;
+  }
+}
+.intro__content {
+  grid-column: col-start 1/col-end 3;
+}
+@media only screen and (max-width: 37.5em) {
+  .intro__content {
+    grid-column: col-start 1/col-end 8;
+  }
+}
+.intro__content--title {
+  font-family: Lora;
+  font-size: 4.8rem;
+  font-weight: 400;
+  text-align: left;
+}
+@media only screen and (max-width: 37.5em) {
+  .intro__content--title {
+    font-size: 3.6rem;
+  }
+}
+.intro__content--text {
+  margin: 3rem 0rem 5rem 0rem;
+  font-family: Montserrat;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+@media only screen and (max-width: 37.5em) {
+  .intro__content--text {
+    font-size: 1.4rem;
+    margin: 2rem 0rem 3rem 0rem;
+  }
+}
+.intro__content--link {
+  font-family: Montserrat;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+}
+.intro__image {
+  margin-left: 5rem;
+  grid-column: col-start 4/-1;
+}
+@media only screen and (max-width: 37.5em) {
+  .intro__image {
+    grid-column: col-start 1/col-end 8;
+    margin-top: 3rem;
+    margin-left: 0rem;
+  }
+}
+.intro__image > img {
+  width: 100%;
+}
+.intro .designer {
+  grid-column: col-start 6/col-end 7;
+  background-color: #181719;
+  transform: translateY(-5rem);
+  padding: 0rem 2rem 2rem 2rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .intro .designer {
+    grid-column: col-start 2/col-end 7;
+    margin-left: 0rem;
+  }
+}
+.intro .designer__namecard {
+  display: grid;
+  grid-template-columns: min-content max-content;
+  grid-gap: 2rem;
+  padding: 2rem 0;
+}
+.intro .designer__namecard--photo {
+  border-radius: 50%;
+  width: 5rem;
+}
+.intro .designer__namecard--details h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+@media only screen and (max-width: 37.5em) {
+  .intro .designer__namecard--details h3 {
+    font-size: 1.2rem;
+  }
+}
+.intro .designer__namecard--details p {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .intro .designer__namecard--details p {
+    font-size: 1rem;
+  }
+}
+.intro .designer__text {
+  font-family: "Lora", serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+@media only screen and (max-width: 37.5em) {
+  .intro .designer__text {
+    font-size: 1.8rem;
+  }
+}
+
+footer {
+  font-weight: 600px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

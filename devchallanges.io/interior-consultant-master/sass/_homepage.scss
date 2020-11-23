@@ -1,0 +1,162 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    font-weight: 500;
+
+    &__logo {
+        display: inline-block;
+        white-space: nowrap;
+        font-family:$font-logo;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        border: 1px solid #fff;
+        padding: .8rem;
+    }
+
+    &__links { 
+        // display: flex;
+        // list-style-type: none;
+        // font-size: 1.4rem;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(12rem, max-content ));
+        justify-items: center;
+
+        &--link {
+            display: inline-block;
+            // padding-left: 7rem;
+        }
+        &--selected { 
+            font-weight: bold;
+        }
+    }
+
+}
+
+.intro { 
+    margin: 10rem 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(8, [col-start] 1fr [col-end]);
+    // grid-row: 70vh max-content;
+    @include respond(phone) {
+        margin: 3rem 0 0 0;
+    }
+
+
+    &__content { 
+        grid-column: col-start 1 / col-end 3;
+
+        @include respond(phone) {
+            grid-column: col-start 1 / col-end 8;  
+        } 
+
+        &--title {
+            font-family: Lora;
+            font-size: 4.8rem;
+            font-weight: 400;
+            text-align: left;
+
+            @include respond(phone) {
+                font-size: 3.6rem;
+            }
+        }
+        &--text { 
+            margin: 3rem 0rem 5rem 0rem;
+            font-family: Montserrat;
+            font-size: 1.8rem;
+            font-weight: 300;
+            @include respond(phone) {
+                font-size: 1.4rem;
+                margin: 2rem 0rem 3rem 0rem;
+            }
+            
+        }
+        
+        &--link { 
+            font-family: Montserrat;
+                font-size: 1.8rem;
+                font-style: normal;
+                font-weight: 600;
+                text-decoration: none;
+                color: #fff;
+
+        }
+    }
+
+    &__image { 
+        margin-left: 5rem;
+        grid-column: col-start 4 / -1;
+
+        @include respond(phone) {
+            grid-column: col-start 1 / col-end 8; 
+            margin-top: 3rem;
+            margin-left: 0rem; 
+        } 
+
+        > img { 
+            width: 100%;
+        }
+    }
+    
+    .designer { 
+        grid-column: col-start 6 / col-end 7;
+        background-color: $color-primary-black;
+        transform: translateY(-5rem);
+        padding: 0rem 2rem 2rem 2rem;
+
+        @include respond(phone) {
+            grid-column: col-start 2 / col-end 7; 
+            margin-left: 0rem; 
+        } 
+        
+        
+        
+        &__namecard { 
+            display: grid;
+            grid-template-columns: min-content max-content;
+            grid-gap:2rem;
+            padding: 2rem 0;
+
+            &--photo {
+                border-radius: 50%;
+                width: 5rem;
+                // margin: 2rem;
+            }
+            &--details {
+                h3 {
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    @include respond(phone) {
+                        font-size: 1.2rem;
+                    }
+                }
+                p { 
+                    margin-top: .5rem;
+                    font-size: 1.2rem;
+                    @include respond(phone) {
+                        font-size: 1rem;
+                    }
+                }
+            
+            }
+    
+        }
+
+        &__text { 
+            font-family: $font-display;
+            font-size: 2.4rem; 
+            font-weight: 700;
+            @include respond(phone) {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+footer {
+    font-weight: 600px;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+

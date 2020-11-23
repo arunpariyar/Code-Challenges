@@ -1,0 +1,27 @@
+//CSS Reset
+*,
+*::before,
+*::after { 
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; //1rem = 10px 
+}
+
+body { 
+    background-color: $color-primary-black;
+    color: $color-primary-white;
+    font-family: $font-base ;
+    font-weight: 300;
+    font-size: 1.8rem;
+    margin: 5rem; 
+
+    @include respond(phone) {
+        margin: 2rem;
+    } 
+}
+
