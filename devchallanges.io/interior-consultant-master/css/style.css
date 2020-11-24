@@ -53,37 +53,44 @@ body {
   font-size: 1.8rem;
   margin: 5rem;
 }
-@media only screen and (max-width: 37.5em) {
-  body {
-    margin: 2rem;
-  }
-}
 
 .navigation__checkbox {
   display: none;
 }
 .navigation__button {
   background-color: #fff;
-  width: 7rem;
-  height: 7rem;
+  width: 6rem;
+  height: 6rem;
   position: fixed;
-  top: 6rem;
-  right: 6rem;
+  top: 5rem;
+  right: 5rem;
   border-radius: 50%;
   z-index: 2000;
   text-align: center;
   cursor: pointer;
 }
+@media only screen and (max-width: 37.5em) {
+  .navigation__button {
+    top: 3rem;
+    right: 3rem;
+  }
+}
 .navigation__background {
-  height: 6rem;
-  width: 6rem;
+  height: 5rem;
+  width: 5rem;
   border-radius: 50%;
   position: fixed;
-  top: 6.5rem;
-  right: 6.5rem;
+  top: 5.5rem;
+  right: 5.5rem;
   background-image: radial-gradient(#181719, #181719);
   z-index: 1000;
   transition: transform 0.8s;
+}
+@media only screen and (max-width: 37.5em) {
+  .navigation__background {
+    top: 3.5rem;
+    right: 3.5rem;
+  }
 }
 .navigation__nav {
   height: 100vh;
@@ -126,7 +133,7 @@ body {
 }
 .navigation__icon {
   position: relative;
-  margin-top: 3.5rem;
+  margin-top: 3rem;
 }
 .navigation__icon, .navigation__icon::before, .navigation__icon::after {
   width: 3rem;
@@ -165,10 +172,21 @@ body {
 }
 
 .nav {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.4rem;
-  font-weight: 500;
+  /*  &__links { 
+       // display: flex;
+       // list-style-type: none;
+       // font-size: 1.4rem;
+       display: grid;
+       grid-template-columns: repeat(4, minmax(12rem, max-content ));
+       justify-items: center;
+
+       &--link {
+           display: inline-block;
+           // padding-left: 7rem;
+       }
+       &--selected { 
+           font-weight: bold;
+       } */
 }
 .nav__logo {
   display: inline-block;
@@ -179,34 +197,25 @@ body {
   border: 1px solid #fff;
   padding: 0.8rem;
 }
-.nav__links {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(12rem, max-content));
-  justify-items: center;
-}
-.nav__links--link {
-  display: inline-block;
-}
-.nav__links--selected {
-  font-weight: bold;
-}
 
 .intro {
   margin: 10rem 0 0 0;
   display: grid;
   grid-template-columns: repeat(8, [col-start] 1fr [col-end]);
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .intro {
-    margin: 3rem 0 0 0;
+    margin: 5rem 0 0 0;
   }
 }
 .intro__content {
   grid-column: col-start 1/col-end 3;
+  margin-right: 5rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .intro__content {
     grid-column: col-start 1/col-end 8;
+    margin-right: 0rem;
   }
 }
 .intro__content--title {
@@ -215,9 +224,9 @@ body {
   font-weight: 400;
   text-align: left;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .intro__content--title {
-    font-size: 3.6rem;
+    font-size: 3.3rem;
   }
 }
 .intro__content--text {
@@ -225,12 +234,6 @@ body {
   font-family: Montserrat;
   font-size: 1.8rem;
   font-weight: 300;
-}
-@media only screen and (max-width: 37.5em) {
-  .intro__content--text {
-    font-size: 1.4rem;
-    margin: 2rem 0rem 3rem 0rem;
-  }
 }
 .intro__content--link {
   font-family: Montserrat;
@@ -241,10 +244,9 @@ body {
   color: #fff;
 }
 .intro__image {
-  margin-left: 5rem;
   grid-column: col-start 4/-1;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .intro__image {
     grid-column: col-start 1/col-end 8;
     margin-top: 3rem;
@@ -255,12 +257,12 @@ body {
   width: 100%;
 }
 .intro .designer {
-  grid-column: col-start 6/col-end 7;
+  grid-column: col-start 5/col-end 7;
   background-color: #181719;
   transform: translateY(-5rem);
   padding: 0rem 2rem 2rem 2rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .intro .designer {
     grid-column: col-start 2/col-end 7;
     margin-left: 0rem;
@@ -280,29 +282,14 @@ body {
   font-size: 1.4rem;
   font-weight: 500;
 }
-@media only screen and (max-width: 37.5em) {
-  .intro .designer__namecard--details h3 {
-    font-size: 1.2rem;
-  }
-}
 .intro .designer__namecard--details p {
   margin-top: 0.5rem;
   font-size: 1.2rem;
-}
-@media only screen and (max-width: 37.5em) {
-  .intro .designer__namecard--details p {
-    font-size: 1rem;
-  }
 }
 .intro .designer__text {
   font-family: "Lora", serif;
   font-size: 2.4rem;
   font-weight: 700;
-}
-@media only screen and (max-width: 37.5em) {
-  .intro .designer__text {
-    font-size: 1.8rem;
-  }
 }
 
 footer {

@@ -18,10 +18,6 @@ body {
     font-family: $font-base ;
     font-weight: 300;
     font-size: 1.8rem;
-    margin: 5rem; 
-
-    @include respond(phone) {
-        margin: 2rem;
-    } 
+    margin: 5rem;
 }
 
