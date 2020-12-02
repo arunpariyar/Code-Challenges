@@ -187,18 +187,55 @@ console.log(myCountry.population);
  console.log(john.getSummary());
  */
 
-//  Lecture Looping Array
+/* //  Lecture Looping Array
 
 //calcuate age for the years and save into an array
 const years = [1991, 1980, 1978, 1985];
 const ages = [];
 
 for(let i = 0; i < years.length ; i++){
-    let age = 2020 - years[i];
-    ages.push(age);
+    ages.push(2020 - years[i]);
 }
 
 console.log(ages);
+
+for(let i = 0; i < ages.length; i++){
+    if(ages[i] >= 40) continue;
+    console.log(ages[i]);
+}
+ */
+/* 
+ //Lecture continue and break;
+
+ const data = ["John", 30, true, ["hello"],(arg)=> console.log(arg)]
+
+for(let i = 0; i < data.length; i++){
+    if(typeof data[i] !== 'function') continue;
+    console.log(data[i]);
+}
+
+for(let i = 0; i < data.length; i++){
+    if(typeof data[i] === 'object') break;
+    console.log(data[i]);
+}
+ */
+
+/*  for(let exercise = 1; exercise < 4 ; exercise++){
+     console.log(`💪 Exercise ${exercise} `);
+    for(let rep = 1; rep < 6; rep++){
+        console.log(`🏋️‍♂️ Rep ${rep}`);
+    }
+ } */
+
+ //looping an array backwards
+
+ const data = ["John", 30, true, ["hello"]]
+
+ for(let i = data.length; i >= 0; i--){
+    console.log(data[i]);
+ }
+
+
 
 
 
