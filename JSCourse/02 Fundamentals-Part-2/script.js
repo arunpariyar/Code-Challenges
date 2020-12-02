@@ -162,4 +162,43 @@ myCountry["population"] -= 2;
 console.log(myCountry.population);
 
  */
+/* 
+//  Lecture: Object Methods
+ const john = {
+     firstName:"John",
+     secondName: "Doe",
+     birthYear: "1990",
+     job:"teacher",
+     hasDriversLicense: false,
+     age:0,
+
+     calcAge: function(){
+         this.age = 2020 - this.birthYear;
+         return this.age;
+     },
+
+     getSummary: function(){
+         this.calcAge();
+         return `${this.firstName} is a ${this.age}-year old ${this.job}, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+     }
+
+ };
+
+ console.log(john.getSummary());
+ */
+
+//  Lecture Looping Array
+
+//calcuate age for the years and save into an array
+const years = [1991, 1980, 1978, 1985];
+const ages = [];
+
+for(let i = 0; i < years.length ; i++){
+    let age = 2020 - years[i];
+    ages.push(age);
+}
+
+console.log(ages);
+
+
 
