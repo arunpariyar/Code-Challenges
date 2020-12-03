@@ -201,10 +201,10 @@ for (let i = 1; i <= 100; i++) {
 
 /* //Improved Hello
 
-function sayHello(firstName, lastName) {
+const sayHello = (firstName, lastName) => {
   const message = ` 👋 Hello, ${firstName} ${lastName}`;
   return message;
-}
+};
 
 const firstName = prompt("Please enter your first name.");
 const lastName = prompt("Please enter your lastName.");
@@ -212,14 +212,13 @@ const result = sayHello(firstName, lastName);
 
 console.log(result); */
 
-/* //NUMBER SQUARING
+/* 
+//NUMBER SQUARING
 function square1(arg) {
   return arg ** 2;
 }
 
-const square2 = function (arg) {
-  return arg ** 2;
-};
+const square2 = arg =>  arg ** 2;
 
 // console.log(square1(0));
 // console.log(square1(2));
@@ -241,3 +240,111 @@ const min = function (arg1, arg2) {
 console.log(min(4.5, 5));
 console.log(min(19, 9));
 console.log(min(1, 1)); */
+
+/* //Calculator
+function calculator(arg1, arg2, arg3) {
+  switch (arg2) {
+    case "+":
+      return arg1 + arg3;
+      break;
+    case "-":
+      return arg1 - arg3;
+      break;
+    case "*":
+      return arg1 * arg3;
+      break;
+    case "/":
+      return arg1 / arg3;
+    default:
+      return "Please enter the data again carefully";
+  }
+}
+
+console.log(calculator(4, "+", 6));
+console.log(calculator(4, "-", 6));
+console.log(calculator(2, "*", 0));
+console.log(calculator(12, "/", 0)); */
+
+/* //Circumference of a Circle
+const circumference = (radius) => 2 * Math.PI * radius;
+const areaOfCircle = (radius) => Math.PI * radius ** 2;
+
+console.log(circumference(5));
+console.log(areaOfCircle(5)); */
+
+//OBJECTS
+
+/* //ADDING CHARACTER EXPERIENCE
+const aurora = {
+  name: "Aurora",
+  health: 150,
+  strength: 25,
+  xp: 0,
+
+  describe: function () {
+    console.log(
+      `${this.name} has ${this.health} health points, ${this.strength} as strength and ${this.xp} XP points.`
+    );
+  },
+};
+
+aurora.health -= 20;
+aurora.strength += 10;
+aurora.xp += 15;
+
+aurora.describe(); */
+
+/* //MODELING A DOG
+const dog = {
+  name: "Fang",
+  species: "boarhound",
+  size: "75",
+
+  bark: function () {
+    return "Grrr! Grrr!";
+  },
+};
+
+console.log(`${dog.name} is a ${dog.species} measuring at ${dog.size}.`);
+console.log(`Look, a cat ! ${dog.name} barks: ${dog.bark()}`);
+ */
+
+/* //MODELING A CIRCLE
+let circle = {
+  radius: 0,
+
+  area: function () {
+    return Math.PI * this.radius ** 2;
+  },
+  circumference: function () {
+    return 2 * Math.PI * this.radius;
+  },
+};
+
+const r = Number(prompt("Please enter the radius of the circle"));
+//updating the radius value
+circle.radius = r;
+
+console.log(`Its circumference is ${circle.circumference()}`);
+console.log(`Its area is ${circle.area()}`);
+
+ */
+
+/* //Modeling a Bank Account
+
+const account = {
+  owner: "Alex",
+  balance: 0,
+
+  credit: function (amt) {
+    this.balance += amt;
+  },
+  describe: function () {
+    console.log(`owner:${account.owner}, balance:${account.balance}`);
+  },
+};
+
+account.credit(250);
+account.describe();
+account.credit(-80);
+account.describe(); */
