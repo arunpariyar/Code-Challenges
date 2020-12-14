@@ -183,7 +183,7 @@ for (let i = 1; i < userInputToArray.length; i++) {
 }
 
 console.log(result); */
-/* // String Methods
+// String Methods
 const string = 'Hello';
 console.log(string.length);
 console.log(string.toUpperCase());
@@ -196,7 +196,7 @@ console.log(string.endsWith('o')); */
 
 //Masking Strings
 
-const maskString = function (num) {
+/* const maskString = function (num) {
   //take the last 2 number
   const lastDigits = num.toString().slice(-2);
 
