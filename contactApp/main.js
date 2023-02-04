@@ -43,6 +43,8 @@ class Contact {
   // There needs to be a search bar where the user can find existing contacts.
 }
 
+$("#addContactForm").hide();
+
 //MAIN CONTACTS ARRAY
 let contacts = [];
 // let updatedList = [];
@@ -54,14 +56,31 @@ function seedContacts() {
   contacts.push(new Contact("johny", "depp", 564321, "actor way"));
 }
 
+$("addContactForm").hide();
+
 seedContacts();
 
 function loadContacts(contacts) {
   //clearing all the html within the ul
   $("ul").html("");
   contacts.forEach((contact, index) => {
-    let newContact = $("<li>");
-    let html = `<p>${contact.name} ${contact.sname}<p><button class="removeContact">remove</button>`;
+    let newContact = $("<li>").addClass("contact-list");
+    let html = `
+    <div class="contact-details">
+      <div class="contact">
+        <p class="contact-name">${contact.name[0].toUpperCase()}${contact.name.slice(
+      1
+    )} ${contact.sname[0].toUpperCase()}${contact.sname.slice(1)}</p>
+        <p class="contact-phone-address"> +49 ${contact.phone} | ${
+      contact.address
+    }</p>
+      </div>
+      <span class="material-symbols-outlined removeContact">
+delete_forever
+</span>
+      </div>
+    </div>
+    `;
     newContact.attr("id", index);
     newContact.html(html).appendTo("ul");
   });
@@ -71,6 +90,22 @@ loadContacts(contacts);
 
 //================= EVENT LISTENERS ============
 
+//Remove default value on user click
+
+$("input").on("focusin", function () {
+  $(this).val("");
+});
+
+//TOGGLE APP HEADING
+$("#addContact").on("click", function () {
+  // $(this).toggle(css("color", "rgb(187, 187, 187)"); toogle color implement later
+  $("#addContactForm").toggle();
+  $(".search-form").toggle();
+  $(this).text() !== "search"
+    ? $(this).text("search")
+    : $(this).text("add_circle");
+});
+
 //CREATE CONTACT
 $(".createContact").on("click", function (event) {
   event.preventDefault();
@@ -79,20 +114,23 @@ $(".createContact").on("click", function (event) {
   let $phone = $("#phone").val().trim();
   let $address = $("#address").val().trim();
 
-  contacts.push(new Contact($name, $sname, $phone, $address));
-  //resetting the value of the text input to empty string
-  $("#name").val(" ");
-  $("#sname").val(" ");
-  $("#phone").val(" ");
-  $("#address").val(" ");
-
-  loadContacts(contacts);
-  console.log(contacts);
+  if ($name !== "" && $sname !== "" && $phone !== "" && $address !== "") {
+    contacts.push(new Contact($name, $sname, $phone, $address));
+    //resetting the value of the text input to empty string
+    $("#name").val(" ");
+    $("#sname").val(" ");
+    $("#phone").val(" ");
+    $("#address").val(" ");
+    loadContacts(contacts);
+  } else {
+    //create a function to print error message on the screen
+    console.log(" please enter all details properly");
+  }
 });
 
 // REMOVE CONTACT
 
-$("ul").on("click", "button", function (event) {
+$("ul").on("click", "span", function (event) {
   event.preventDefault();
   let $parent = $(this).parent().parent();
   // console.log($parent);
@@ -150,4 +188,13 @@ function search(str) {
 // 6. Need to add a view all contacts button - perhaps just a reload implementation in the button will do
 // 7. Start with the design in figma proceed with the next steps
 
+//STYLES TO DO
+
+// have default info in the input tags - DONE **
+// figure out how to put icon inside the input tags - DONE ** suitable alternative found
+// insert the plus sign next to the title and get the contact submission to show and hide - DONE
+
+//REFACTORING
+
 // May be think about breaking the function in smaller parts if possible.
+// for example to capitalise the name
