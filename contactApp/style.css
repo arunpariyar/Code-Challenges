@@ -1,3 +1,11 @@
+:root {
+  --main-blue: #0eafdb;
+  --main-grey-light: #828282;
+  --app-bg-color: #f7f7f7;
+  --html-bg-color: #141e30;
+  --pure-white: #fff;
+  --search-border-white: #e7e7e7;
+}
 /********************* IMPORTING GOOGLE FONTS ******/
 @import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500&family=Montserrat:wght@100;300;500&display=swap");
 
@@ -20,7 +28,7 @@ body {
   font-weight: 400;
   height: 100vh;
   margin: 0;
-  background: #141e30;
+  background: var(--html-bg-color);
   font-size: 1.6rem;
 }
 
@@ -29,16 +37,23 @@ body {
 .createContact {
   font-family: Jost;
   font-size: 1.5rem;
-  background-color: #0eafdb;
+  background-color: var(--main-blue);
   text-transform: uppercase;
   border-radius: 30px;
   font-weight: 400;
-  /* text-decoration: none; */
   letter-spacing: 0.4rem;
   border: none;
   padding: 1.5rem 3.5rem;
-  color: white;
+  color: var(--pure-white);
   align-self: center;
+  margin-bottom: 1.5rem;
+}
+
+.addContact-error {
+  text-align: center;
+  color: orange;
+  letter-spacing: 0.15rem;
+  margin-top: 1.5rem;
 }
 
 /******** APP ON LOAD *****/
@@ -49,9 +64,20 @@ body {
   justify-content: center;
 }
 
+.divider {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--pure-white);
+  border: 1px solid var(--search-border-white);
+  border-radius: 13px;
+  margin: 3.7rem 0;
+  padding: 1rem 0;
+  font-size: 3.3rem;
+  letter-spacing: 1.5px;
+}
 /************** LIST *****/
 li {
-  background-color: white;
+  background-color: var(--pure-white);
   list-style-type: none;
   margin-bottom: 1rem;
   border-radius: 10px;
@@ -62,15 +88,16 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  column-gap: 1rem;
 }
 
 .contact-details span {
-  color: #0eafdb;
+  color: var(--main-blue);
   font-size: 24px;
 }
 .contact-phone-address {
   font-size: 1.2rem;
-  color: #828282;
+  color: var(--main-grey-light);
 }
 
 /*********************** CENTERING OUR APP *****/
@@ -89,14 +116,15 @@ li {
 }
 
 .app-content {
-  background-color: rgba(247, 247, 247);
+  background-color: var(--app-bg-color);
   margin: auto;
-  height: 667px;
-  width: 375px;
+  height: 670px;
+  width: 370px;
+  overflow: scroll;
   border-radius: 5px;
   padding: 1.2rem;
-  border-top: 4rem solid rgb(14, 175, 219);
-  border-bottom: 1rem solid rgb(14, 175, 219);
+  border-top: 4rem solid var(--main-blue);
+  border-bottom: 1rem solid var(--main-blue);
 }
 
 .app-title {
@@ -107,18 +135,28 @@ li {
   line-height: 1.6rem;
   letter-spacing: 0.01em;
   margin: 2rem 0;
-  color: #0eafdb;
+  color: var(--main-blue);
 }
 
 .search-form {
   margin-bottom: 2rem;
 }
 .search-bar {
-  background: #ffffff;
-  border: 1px solid #e7e7e7;
+  background: var(--pure-white);
+  border: 1px solid var(--search-border-white);
   box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.25);
   border-radius: 50px 50px 50px 50px;
   width: 100%;
+}
+input:focus::placeholder {
+  color: transparent;
+  letter-spacing: 1rem;
+}
+.search-error {
+  text-align: center;
+  color: orange;
+  letter-spacing: 0.15rem;
+  margin-top: 3rem;
 }
 
 .input-group {
@@ -145,6 +183,10 @@ input {
 }
 input:focus {
   outline: none;
-  color: rgb(14, 175, 219);
+  color: var(--main-blue);
   font-style: normal;
+}
+
+.active {
+  text-decoration: underline;
 }

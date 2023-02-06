@@ -21,13 +21,13 @@
       <div class="app-content">
         <div class="app_home">
           <h1 class="app-title">Address Book</h1>
-          <span
+          <!-- <span
             id="addContact"
             class="material-symbols-outlined"
             style="color: #0eafdb; font-size: 4rem"
           >
             add_circle
-          </span>
+          </span> -->
         </div>
 
         <form class="search-form">
@@ -40,29 +40,59 @@
               type="text"
               name="search"
               id="search"
-              value="full name"
+              placeholder="full name"
             />
           </div>
+          <p class="search-error">default text</p>
         </form>
+
+        <div class="divider">
+          <p class="home-shortcut">
+            <span
+              class="material-symbols-outlined home-icon active"
+              style="color: #0eafdb; font-size: 2.5"
+            >
+              home
+            </span>
+          </p>
+          <p class="results-shortcut">
+            <span
+              class="material-symbols-outlined add-icon"
+              style="color: #0eafdb; font-size: 2.5"
+            >
+              person_add
+            </span>
+          </p>
+        </div>
 
         <form id="addContactForm" class="contact-form">
           <div class="input-group">
             <span class="material-symbols-outlined" style="color: #0eafdb">
               account_circle
             </span>
-            <input type="text" name="name" id="name" value="name" />
+            <input type="text" name="name" id="name" placeholder="name" />
           </div>
           <div class="input-group">
             <span class="material-symbols-outlined" style="color: #0eafdb">
               badge
             </span>
-            <input type="text" name="surname" id="sname" value="surname" />
+            <input
+              type="text"
+              name="surname"
+              id="sname"
+              placeholder="surname"
+            />
           </div>
           <div class="input-group">
             <span class="material-symbols-outlined" style="color: #0eafdb">
               call
             </span>
-            <input type="tel" name="phone" id="phone" value="e.g. 5623456132" />
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="e.g. 5623456132"
+            />
           </div>
           <div class="input-group">
             <span class="material-symbols-outlined" style="color: #0eafdb">
@@ -72,15 +102,16 @@
               type="text"
               name="address"
               id="address"
-              value="e.g. potsdamer platz 52"
+              placeholder="e.g. potsdamer platz 52"
             />
           </div>
           <button id="btn-create" type="submit" class="createContact">
             Create
           </button>
+          <p class="addContact-error">default message</p>
         </form>
 
-        <div class="contact-list">
+        <div class="contacts">
           <ul></ul>
         </div>
       </div>
