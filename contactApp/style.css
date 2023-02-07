@@ -32,9 +32,88 @@ body {
   font-size: 1.6rem;
 }
 
-/****BUTTON*****/
+/************ APP SECTION *****/
 
-.createContact {
+.app {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.app__container {
+  background-color: var(--app-bg-color);
+  margin: auto;
+  height: 670px;
+  width: 370px;
+  overflow: scroll;
+  border-radius: 5px;
+  padding: 1.2rem;
+  border-top: 4rem solid var(--main-blue);
+  border-bottom: 1rem solid var(--main-blue);
+}
+
+.app__home {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.app__home--title {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.7rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.01em;
+  margin: 2rem 0;
+  color: var(--main-blue);
+}
+
+/********** SEARCH SECTION *****/
+
+.search {
+  margin-bottom: 2rem;
+}
+.search__bar {
+  background: var(--pure-white);
+  border: 1px solid var(--search-border-white);
+  box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.25);
+  border-radius: 50px 50px 50px 50px;
+  width: 100%;
+}
+
+.search__error {
+  text-align: center;
+  color: orange;
+  letter-spacing: 0.15rem;
+  margin-top: 3rem;
+}
+
+/*********** SHORTCUT SECTION *****/
+
+.shortcut {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--pure-white);
+  border: 1px solid var(--search-border-white);
+  border-radius: 13px;
+  margin: 3.7rem 0;
+  padding: 1rem 0;
+  font-size: 3.3rem;
+  letter-spacing: 1.5px;
+}
+
+/************* CONTACT FORM ******/
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-form__btn {
   font-family: Jost;
   font-size: 1.5rem;
   background-color: var(--main-blue);
@@ -49,33 +128,7 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.addContact-error {
-  text-align: center;
-  color: orange;
-  letter-spacing: 0.15rem;
-  margin-top: 1.5rem;
-}
-
-/******** APP ON LOAD *****/
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.divider {
-  display: flex;
-  justify-content: space-around;
-  background-color: var(--pure-white);
-  border: 1px solid var(--search-border-white);
-  border-radius: 13px;
-  margin: 3.7rem 0;
-  padding: 1rem 0;
-  font-size: 3.3rem;
-  letter-spacing: 1.5px;
-}
-/************** LIST *****/
+/************** CONTACTS *****/
 li {
   background-color: var(--pure-white);
   list-style-type: none;
@@ -100,66 +153,9 @@ li {
   color: var(--main-grey-light);
 }
 
-/*********************** CENTERING OUR APP *****/
+/************ INPUT - GROUP *****/
 
-.app_home {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-.app-container {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.app-content {
-  background-color: var(--app-bg-color);
-  margin: auto;
-  height: 670px;
-  width: 370px;
-  overflow: scroll;
-  border-radius: 5px;
-  padding: 1.2rem;
-  border-top: 4rem solid var(--main-blue);
-  border-bottom: 1rem solid var(--main-blue);
-}
-
-.app-title {
-  font-family: "Jost";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 2.7rem;
-  line-height: 1.6rem;
-  letter-spacing: 0.01em;
-  margin: 2rem 0;
-  color: var(--main-blue);
-}
-
-.search-form {
-  margin-bottom: 2rem;
-}
-.search-bar {
-  background: var(--pure-white);
-  border: 1px solid var(--search-border-white);
-  box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.25);
-  border-radius: 50px 50px 50px 50px;
-  width: 100%;
-}
-input:focus::placeholder {
-  color: transparent;
-  letter-spacing: 1rem;
-}
-.search-error {
-  text-align: center;
-  color: orange;
-  letter-spacing: 0.15rem;
-  margin-top: 3rem;
-}
-
-.input-group {
+.input__group {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -181,6 +177,12 @@ input {
   border-radius: 10px;
   letter-spacing: 0.4px;
 }
+
+input:focus::placeholder {
+  color: transparent;
+  letter-spacing: 1rem;
+}
+
 input:focus {
   outline: none;
   color: var(--main-blue);

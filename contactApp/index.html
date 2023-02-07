@@ -17,37 +17,30 @@
     <title>Address Book</title>
   </head>
   <body>
-    <div class="app-container">
-      <div class="app-content">
-        <div class="app_home">
-          <h1 class="app-title">Address Book</h1>
-          <!-- <span
-            id="addContact"
-            class="material-symbols-outlined"
-            style="color: #0eafdb; font-size: 4rem"
-          >
-            add_circle
-          </span> -->
+    <div class="app">
+      <div class="app__container">
+        <div class="app__home">
+          <h1 class="app__home--title">Address Book</h1>
         </div>
 
-        <form class="search-form">
-          <div class="input-group">
+        <form class="search">
+          <div class="input__group">
             <span class="material-symbols-outlined" style="color: #0eafdb"
               >search</span
             >
             <input
-              class="search-bar"
+              class="search__bar"
               type="text"
               name="search"
               id="search"
               placeholder="full name"
             />
           </div>
-          <p class="search-error">default text</p>
+          <p class="search__error">default text</p>
         </form>
 
-        <div class="divider">
-          <p class="home-shortcut">
+        <div class="shortcut">
+          <p class="shortcut__home">
             <span
               class="material-symbols-outlined home-icon active"
               style="color: #0eafdb; font-size: 2.5"
@@ -55,7 +48,7 @@
               home
             </span>
           </p>
-          <p class="results-shortcut">
+          <p class="shortcut__contact">
             <span
               class="material-symbols-outlined add-icon"
               style="color: #0eafdb; font-size: 2.5"
@@ -65,14 +58,14 @@
           </p>
         </div>
 
-        <form id="addContactForm" class="contact-form">
-          <div class="input-group">
+        <form class="contact-form">
+          <div class="input__group">
             <span class="material-symbols-outlined" style="color: #0eafdb">
               account_circle
             </span>
             <input type="text" name="name" id="name" placeholder="name" />
           </div>
-          <div class="input-group">
+          <div class="input__group">
             <span class="material-symbols-outlined" style="color: #0eafdb">
               badge
             </span>
@@ -83,7 +76,7 @@
               placeholder="surname"
             />
           </div>
-          <div class="input-group">
+          <div class="input__group">
             <span class="material-symbols-outlined" style="color: #0eafdb">
               call
             </span>
@@ -94,7 +87,7 @@
               placeholder="e.g. 5623456132"
             />
           </div>
-          <div class="input-group">
+          <div class="input__group">
             <span class="material-symbols-outlined" style="color: #0eafdb">
               home
             </span>
@@ -105,10 +98,7 @@
               placeholder="e.g. potsdamer platz 52"
             />
           </div>
-          <button id="btn-create" type="submit" class="createContact">
-            Create
-          </button>
-          <p class="addContact-error">default message</p>
+          <button type="submit" class="contact-form__btn">Create</button>
         </form>
 
         <div class="contacts">
