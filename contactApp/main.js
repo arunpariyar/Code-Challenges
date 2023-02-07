@@ -36,18 +36,12 @@ class Contact {
   set address(address) {
     this._address = address;
   }
-
-  //METHODS
-  // The user needs to be able to create new contacts
-  // The user needs to be able to delete contacts.
-  // There needs to be a search bar where the user can find existing contacts.
 }
 
-$("#addContactForm").hide();
+$(".contact-form").hide();
 
 //MAIN CONTACTS ARRAY
 let contacts = [];
-// let updatedList = [];
 let searchResult;
 
 function seedContacts() {
@@ -55,15 +49,10 @@ function seedContacts() {
   contacts.push(new Contact("neil", "armstrong", 232344234, "space way"));
   contacts.push(new Contact("johny", "depp", 564323421, "actor way"));
   contacts.push(new Contact("wright", "brothers", 33434234, "fly way"));
-  // contacts.push(new Contact("edmund", "hillary", 234542323, "mountain way"));
-  // contacts.push(new Contact("tenzin", "norgi sherpa", 564321, "Nepali way"));
-  // contacts.push(new Contact("peter", "parker", 23434345, "spider way"));
-  // contacts.push(new Contact("clark", "kent", 90908798, "super way"));
 }
 
 $("addContactForm").hide();
-$(".search-error").hide();
-$(".addContact-error").hide();
+$(".search__error").hide();
 
 seedContacts();
 
@@ -98,28 +87,12 @@ loadContacts(contacts);
 //================= EVENT LISTENERS ============
 
 //Remove default value on user click
-
 $("input").on("focusin", function () {
   $(this).val("");
 });
 
-//TOGGLE APP HEADING
-// $("#addContact").on("click", function () {
-//   // $(this).toggle(css("color", "rgb(187, 187, 187)"); toogle color implement later
-//   $(".contacts").toggle();
-//   $("#addContactForm").toggle();
-//   $(".search-error").hide();
-//   $(".addContact-error").hide();
-//   $(".search-bar").val("");
-//   $(".search-form").toggle();
-
-//   $(this).text() !== "search"
-//     ? $(this).text("search")
-//     : $(this).text("add_circle");
-// });
-
 //CREATE CONTACT
-$(".createContact").on("click", function (event) {
+$(".contact-form__btn").on("click", function (event) {
   event.preventDefault();
   let $name = $("#name").val().trim();
   let $sname = $("#sname").val().trim();
@@ -142,16 +115,16 @@ $(".createContact").on("click", function (event) {
     $("#address").val("");
     loadContacts(contacts);
 
-    $(".search-bar").val("");
-    $(".search-form").show();
-    $(".search-bar").show();
-    $(".search-error").hide();
+    $(".search__bar").val("");
+    $(".search").show();
+    $(".search__bar").show();
+    $(".search__error").hide();
     $(".contacts").show();
-    $("#addContactForm").hide();
+    $(".contact-form").hide();
   } else {
     //create a function to print error message on the screen
-    $(".search-error").text('"Please enter all details correctly"');
-    $(".search-error").toggle();
+    $(".search__error").text('"Please enter all details correctly"');
+    $(".search__error").toggle();
   }
 });
 
@@ -167,7 +140,6 @@ $("ul").on("click", "span", function (event) {
   contacts = contacts.filter((contact) => {
     return contact.name != item.name;
   });
-  // contacts = updatedList;
   loadContacts(contacts);
 });
 
@@ -182,15 +154,12 @@ $("#search").keypress(function (event) {
 });
 // find if contact exists in the array
 function search(str) {
-  $(".search-error").hide();
+  $(".search__error").hide();
   //trim will remove white space before or after while .split(/\s+/) will accept multiple special characters spaces, tabs, new lines
   let queryArray = str.trim().split(/\s+/);
   let qname = queryArray[0];
   let qsname = queryArray[1];
-  // if (queryArray.length < 1) {
-  //   $(".search-error").text('"Please enter full name"');
-  //   $(".search-error").toggle();
-  // } else {
+
   const result = contacts.filter(
     (contact) => contact.name === qname || contact.sname === qsname
   );
@@ -198,44 +167,42 @@ function search(str) {
   console.log(result);
   searchResult.push(...result);
   if (searchResult.length === 0) {
-    $(".search-error").text('"No match found"');
-    $(".search-error").show();
+    $(".search__error").text('"No match found"');
+    $(".search__error").show();
   } else {
     $(".contacts").show();
-    $("#addContactForm").hide();
+    $(".contact-form").hide();
     loadContacts(searchResult);
   }
-  // }
 }
 
 //**************************** SHORTCUTS */
 
-$(".home-shortcut").on("click", function (e) {
+$(".shortcut__home").on("click", function (e) {
   e.preventDefault();
   $(".home-icon").addClass("active");
   $(".add-icon").removeClass("active");
   console.log("Home shortcut clicked");
-  $(".search-bar").val("");
-  $(".search-form").show();
-  $(".search-bar").show();
-  $(".search-error").hide();
+  $(".search__bar").val("");
+  $(".search").show();
+  $(".search__bar").show();
+  $(".search__error").hide();
   $(".contacts").show();
-  $("#addContactForm").hide();
+  $(".contact-form").hide();
 
   loadContacts(contacts);
 });
 
-$(".results-shortcut").on("click", function (e) {
+$(".shortcut__contact").on("click", function (e) {
   e.preventDefault();
   $(".add-icon").addClass("active");
   $(".home-icon").removeClass("active");
   $(".contacts").hide();
-  $("#addContactForm").show();
-  $(".search-bar").val("");
-  $(".addContact-error").hide();
-  $(".search-bar").val("");
-  // $(".search-form").();
+  $(".contact-form").show();
+  $(".search__bar").val("");
+  $(".search__bar").val("");
 });
+
 // if yes show the contact on the list
 // if not mention that the contact cannot be found
 
