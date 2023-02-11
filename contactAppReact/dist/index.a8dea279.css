@@ -1,0 +1,22 @@
+.HXMtBa_app__container {
+  background-color: var(--app-bg-color);
+  height: 670px;
+  width: 370px;
+  border-top: 4rem solid var(--main-blue);
+  border-bottom: 1rem solid var(--main-blue);
+  border-radius: 5px;
+  margin: auto;
+  padding: 1.2rem;
+  overflow: scroll;
+}
+
+:root {
+  --main-blue: #0eafdb;
+  --main-grey-light: #828282;
+  --app-bg-color: #f7f7f7;
+  --html-bg-color: #141e30;
+  --pure-white: #fff;
+  --search-border-white: #e7e7e7;
+}
+
+/*# sourceMappingURL=index.a8dea279.css.map */

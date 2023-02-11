@@ -1,0 +1,13 @@
+@import "./vars.css";
+
+.container {
+  background-color: var(--app-bg-color);
+  margin: auto;
+  height: 670px;
+  width: 370px;
+  overflow: scroll;
+  border-radius: 5px;
+  padding: 1.2rem;
+  border-top: 4rem solid var(--main-blue);
+  border-bottom: 1rem solid var(--main-blue);
+}

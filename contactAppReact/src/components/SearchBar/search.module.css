@@ -1,0 +1,51 @@
+@import "../../vars.css";
+
+.search {
+  margin-bottom: 2rem;
+}
+.searchBar {
+  background: var(--pure-white);
+  border: 1px solid var(--search-border-white);
+  box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.25);
+  border-radius: 50px 50px 50px 50px;
+  width: 100%;
+}
+
+.searchIcon {
+  color: var(--main-blue);
+  font-size: 3rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+input {
+  width: 100%;
+  border: 0;
+  height: 40px;
+  line-height: 25px;
+  padding-left: 20px;
+  font-style: italic;
+  color: rgb(187, 187, 187);
+  font-size: 16px;
+  font-family: "Jost", sans-serif;
+  box-sizing: border-box;
+  border-radius: 10px;
+  letter-spacing: 0.4px;
+}
+
+input:focus::placeholder {
+  color: transparent;
+  letter-spacing: 1rem;
+}
+
+input:focus {
+  outline: none;
+  color: var(--main-blue);
+  font-style: normal;
+}

@@ -1,0 +1,149 @@
+:root {
+  --main-blue: #0eafdb;
+  --main-grey-light: #828282;
+  --app-bg-color: #f7f7f7;
+  --html-bg-color: #141e30;
+  --pure-white: #fff;
+  --search-border-white: #e7e7e7;
+}
+
+*, :before, :after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  background: var(--html-bg-color);
+  margin: 0;
+  font-family: Jost, Space Mono, monospace;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.app {
+  height: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+.Mjkzba_container {
+  background-color: var(--app-bg-color);
+  height: 670px;
+  width: 370px;
+  border-top: 4rem solid var(--main-blue);
+  border-bottom: 1rem solid var(--main-blue);
+  border-radius: 5px;
+  margin: auto;
+  padding: 1.2rem;
+  overflow: scroll;
+}
+
+.bapK-W_title {
+  letter-spacing: .01em;
+  color: var(--main-blue);
+  margin: 2rem 1rem 4rem;
+  font-family: Jost;
+  font-size: 2.7rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.6rem;
+}
+
+.dd0ZpW_search {
+  margin-bottom: 2rem;
+}
+
+.dd0ZpW_searchBar {
+  background: var(--pure-white);
+  border: 1px solid var(--search-border-white);
+  width: 100%;
+  border-radius: 50px;
+  box-shadow: 0 6px 9px #00000040;
+}
+
+.dd0ZpW_searchIcon {
+  color: var(--main-blue);
+  font-size: 3rem;
+}
+
+.dd0ZpW_inputGroup {
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+input {
+  width: 100%;
+  height: 40px;
+  color: #bbb;
+  box-sizing: border-box;
+  letter-spacing: .4px;
+  border: 0;
+  border-radius: 10px;
+  padding-left: 20px;
+  font-family: Jost, sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 25px;
+}
+
+input:focus::placeholder {
+  color: #0000;
+  letter-spacing: 1rem;
+}
+
+input:focus {
+  color: var(--main-blue);
+  outline: none;
+  font-style: normal;
+}
+
+.nGHQeG_shortcut {
+  background-color: var(--pure-white);
+  border: 1px solid var(--search-border-white);
+  color: var(--main-grey-light);
+  letter-spacing: 1.5px;
+  border-radius: 13px;
+  justify-content: space-around;
+  margin: 3.7rem .5rem;
+  padding: 2rem 1rem 1rem;
+  font-size: 3rem;
+  font-weight: 300;
+  display: flex;
+}
+
+.sfQwKW_deleteIcon {
+  color: var(--main-blue);
+  font-size: 2rem;
+}
+
+.sfQwKW_contactDetails {
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1rem;
+  display: flex;
+}
+
+.sfQwKW_contact {
+  background-color: var(--pure-white);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+  list-style-type: none;
+}
+
+.sfQwKW_contactPhoneAddress {
+  color: var(--main-grey-light);
+  font-size: 1.2rem;
+}
+
+/*# sourceMappingURL=index.ba565101.css.map */

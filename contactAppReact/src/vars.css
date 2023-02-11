@@ -1,0 +1,40 @@
+:root {
+  --main-blue: #0eafdb;
+  --main-grey-light: #828282;
+  --app-bg-color: #f7f7f7;
+  --html-bg-color: #141e30;
+  --pure-white: #fff;
+  --search-border-white: #e7e7e7;
+}
+
+/********************* IMPORTING GOOGLE FONTS ******/
+/* @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"); */
+
+/********************** CSS RESET *****/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Jost", "Space Mono", monospace;
+  font-weight: 400;
+  height: 100vh;
+  margin: 0;
+  background: var(--html-bg-color);
+  font-size: 1.6rem;
+}
+
+.app {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
