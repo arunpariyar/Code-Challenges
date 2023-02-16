@@ -146,4 +146,38 @@ input:focus {
   font-size: 1.2rem;
 }
 
+.pbHy9q_formIcons {
+  color: var(--main-blue);
+  font-size: 2.5rem;
+}
+
+.pbHy9q_input_group {
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+.pbHy9q_contact_form {
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+}
+
+.pbHy9q_form_btn {
+  background-color: var(--main-blue);
+  text-transform: uppercase;
+  letter-spacing: .4rem;
+  color: var(--pure-white);
+  border: none;
+  border-radius: 30px;
+  align-self: center;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 3.5rem;
+  font-family: Jost;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
 /*# sourceMappingURL=index.ba565101.css.map */

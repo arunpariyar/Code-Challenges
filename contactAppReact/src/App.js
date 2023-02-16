@@ -3,6 +3,7 @@ import { Header } from "./components/Header/Header";
 import { SearchBar } from "./components/SearchBar/SearchBar";
 import { Shortcut } from "./components/Shortcut/Shortcut";
 import { Contacts } from "./components/Contacts/Contacts";
+import { ContactForm } from "./components/ContactForm/ContactForm";
 
 export function App() {
   const contacts = [
@@ -36,7 +37,8 @@ export function App() {
       <Header></Header>
       <SearchBar></SearchBar>
       <Shortcut></Shortcut>
-      <Contacts contacts={contacts}></Contacts>
+      {/* <Contacts contacts={contacts}></Contacts> */}
+      <ContactForm contacts={contacts}></ContactForm>
     </div>
   );
 }
