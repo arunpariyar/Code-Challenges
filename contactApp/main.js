@@ -178,8 +178,8 @@ $("#search").keypress(function (event) {
 
 $(".shortcut__home").on("click", function (e) {
   e.preventDefault();
-  $(".home-icon").toggleClass("active");
-  $(".add-icon").toggleClass("active");
+  $(".home-icon").addClass("active");
+  $(".add-icon").removeClass("active");
   $(".search__bar").val("");
   $(".search").show();
   $(".search__bar").show();
@@ -191,7 +191,7 @@ $(".shortcut__home").on("click", function (e) {
 
 $(".shortcut__contact").on("click", function (e) {
   e.preventDefault();
-  $(".add-icon").togglelass("active");
+  $(".add-icon").toggleClass("active");
   $(".home-icon").toggleClass("active");
   $(".contacts").hide();
   $(".contact-form").show();
