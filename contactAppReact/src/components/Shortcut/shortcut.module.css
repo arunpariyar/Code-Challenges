@@ -13,3 +13,10 @@
   letter-spacing: 1.5px;
   font-weight: 300;
 }
+
+.invisible_btn {
+  background-color: transparent;
+  border: none;
+  font-size: 2.7rem;
+  color: var(--main-blue);
+}

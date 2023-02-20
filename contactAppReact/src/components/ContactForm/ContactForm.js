@@ -2,37 +2,38 @@ import { useState } from "react";
 import * as styles from "./contact-form.module.css";
 import { MdOutlineAccountCircle } from "react-icons/md";
 
-export function ContactForm({ contacts }) {
+export function ContactForm({ handleNewContact, contacts }) {
   const [firstName, setFirstName] = useState("");
   const [secondName, setSecondName] = useState("");
-  const [phone, setPhone] = useState();
+  const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
 
-  function Contact(name, sname, phone, address) {
-    this.name = name.toLowerCase();
-    this.sname = sname.toLowerCase();
-    this.phone = phone;
-    this.address = address;
-  }
-
   //submit handler
-  function submitHandler(event) {
+  function handleAddContact(event) {
     event.preventDefault();
 
-    const name = event.target.first_name.value;
-    const sname = event.target.second_name.value;
-    const phone = event.target.phone.value;
-    const address = event.target.address.value;
+    //getting all the input details
+    const name = event.target.first_name.value.toLowerCase();
+    const sname = event.target.second_name.value.toLowerCase();
+    const phone = parseInt(event.target.phone.value);
+    const address = event.target.address.value.toLowerCase();
+    const id = crypto.randomUUID();
 
-    const newContact = new Contact(name, sname, phone, address);
-    contacts.push(newContact);
-    console.log(contacts);
+    if (
+      name !== "" &&
+      (sname !== "") & Number.isInteger(phone) &&
+      address !== ""
+    ) {
+      handleNewContact({ id, name, sname, phone, address });
+    } else {
+      window.alert("Please enter all details correctly");
+    }
   }
   return (
     <form
       className={styles.contact_form}
       onSubmit={(event) => {
-        submitHandler(event);
+        handleAddContact(event);
       }}
     >
       <div className={styles.input_group}>

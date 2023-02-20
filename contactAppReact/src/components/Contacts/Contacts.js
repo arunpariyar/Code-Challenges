@@ -2,20 +2,12 @@ import React from "react";
 import * as styles from "./contacts.module.css";
 import { MdOutlineDeleteForever } from "react-icons/md";
 
-export function Contacts({ contacts }) {
-  let [click, setClick] = React.useState(0);
-
-  function removeContact() {
-    let nextClick = click + 1;
-    setClick(nextClick);
-    console.log(nextClick);
-  }
-
+export function Contacts({ deleteContact, contacts }) {
   return (
     <ul>
-      {contacts.map((contact, index) => (
+      {contacts.map((contact) => (
         <li
-          key={index}
+          key={contact.id}
           className={`${styles.contactDetails} ${styles.contact}`}
         >
           <div>
@@ -30,7 +22,7 @@ export function Contacts({ contacts }) {
           </div>
           <MdOutlineDeleteForever
             className={styles.deleteIcon}
-            onClick={removeContact}
+            onClick={(event) => deleteContact(event)}
           />
         </li>
       ))}

@@ -121,6 +121,13 @@ input:focus {
   display: flex;
 }
 
+.nGHQeG_invisible_btn {
+  color: var(--main-blue);
+  background-color: #0000;
+  border: none;
+  font-size: 2.7rem;
+}
+
 .sfQwKW_deleteIcon {
   color: var(--main-blue);
   font-size: 2rem;
