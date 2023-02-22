@@ -27,12 +27,3 @@ function Guess({ guess, answer }) {
 }
 
 export default Guess;
-
-// {
-//   /* <span
-//           key={index}
-//           className={result ? result[index].status + " cell" : "cell"}
-//         >
-//           {result ? result[index].letter : undefined}
-//         </span> */
-// }
