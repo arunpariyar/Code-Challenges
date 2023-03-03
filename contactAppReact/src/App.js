@@ -13,15 +13,29 @@ export function App() {
       id: crypto.randomUUID(),
       name: "john",
       sname: "doe",
-      phone: 123456,
-      address: "writers way",
+      phone: 12121212,
+      address: "writers way 1",
     },
     {
       id: crypto.randomUUID(),
       name: "neil",
-      sname: "Armstrong",
-      phone: 3456432,
-      address: "space way",
+      sname: "armstrong",
+      phone: 34343434,
+      address: "space way 1",
+    },
+    {
+      id: crypto.randomUUID(),
+      name: "Edmund",
+      sname: "Hillary",
+      phone: 23232323,
+      address: "mountian way 1",
+    },
+    {
+      id: crypto.randomUUID(),
+      name: "wright",
+      sname: "brothers",
+      phone: 39393939,
+      address: "air way 1",
     },
   ]);
   //create  a lifted state for the shortcut the value of which will ensure we can toggle effectively
@@ -45,10 +59,10 @@ export function App() {
     handleHomeShortcut();
   }
 
-  function deleteContact(event) {
+  function deleteContact(id) {
     //NEED TO IMPLEMENT THIS
     // ISSUE HOW DO I GET THE KEY OF THE PARENT ID ?
-    console.log(event);
+    console.log(id);
   }
 
   //create a function that can then be passed down to the shortcut

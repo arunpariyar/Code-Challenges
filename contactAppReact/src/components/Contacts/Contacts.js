@@ -22,7 +22,7 @@ export function Contacts({ deleteContact, contacts }) {
           </div>
           <MdOutlineDeleteForever
             className={styles.deleteIcon}
-            onClick={(event) => deleteContact(event)}
+            onClick={(event) => deleteContact(contact.id)}
           />
         </li>
       ))}

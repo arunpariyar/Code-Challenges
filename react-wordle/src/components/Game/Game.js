@@ -30,7 +30,7 @@ function Game() {
     // check if won else continue on
     if (guess === answer) {
       setStatus("win");
-      //logic to disable button
+      //logic to disable the input
       setGameOver(true);
     }
 

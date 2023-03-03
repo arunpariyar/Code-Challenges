@@ -2,6 +2,8 @@ import * as styles from "./search.module.css";
 
 import { MdSearch } from "react-icons/md";
 export function SearchBar() {
+
+  
   return (
     <>
       <form className={styles.search}>
